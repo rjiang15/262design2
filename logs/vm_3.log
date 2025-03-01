@@ -1,0 +1,17 @@
+1740794290.835 - Internal event: clock ticked to 1.
+1740794291.007 - Received message: updated clock to 3. Queue length: 0
+1740794291.175 - Internal event: clock ticked to 4.
+1740794291.346 - Received message: updated clock to 5. Queue length: 1
+1740794291.514 - Received message: updated clock to 6. Queue length: 0
+1740794291.686 - Internal event: clock ticked to 7.
+1740794291.858 - Sent message to VM 1: clock is now 8.
+1740794292.030 - Sent message to VM 1: clock is now 9.
+1740794292.030 - Sent message to VM 2: clock is now 10.
+1740794292.198 - Sent message to VM 2: clock is now 11.
+1740794292.368 - Internal event: clock ticked to 12.
+1740794292.536 - Internal event: clock ticked to 13.
+1740794292.704 - Internal event: clock ticked to 14.
+1740794292.876 - Sent message to VM 1: clock is now 15.
+1740794292.876 - Sent message to VM 2: clock is now 16.
+1740794293.047 - Internal event: clock ticked to 17.
+1740794293.219 - Internal event: clock ticked to 18.
