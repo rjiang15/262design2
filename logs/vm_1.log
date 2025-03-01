@@ -1,15 +1,29 @@
-1740794290.835 - Internal event: clock ticked to 1.
-1740794291.007 - Sent message to VM 3: clock is now 2.
-1740794291.175 - Sent message to VM 3: clock is now 3.
-1740794291.346 - Internal event: clock ticked to 4.
-1740794291.514 - Internal event: clock ticked to 5.
-1740794291.686 - Internal event: clock ticked to 6.
-1740794291.857 - Internal event: clock ticked to 7.
-1740794292.028 - Received message: updated clock to 9. Queue length: 0
-1740794292.196 - Received message: updated clock to 10. Queue length: 0
-1740794292.365 - Internal event: clock ticked to 11.
-1740794292.536 - Internal event: clock ticked to 12.
-1740794292.704 - Internal event: clock ticked to 13.
-1740794292.875 - Internal event: clock ticked to 14.
-1740794293.046 - Received message: updated clock to 16. Queue length: 0
-1740794293.217 - Internal event: clock ticked to 17.
+1740794818.266 - Network: Listening on 127.0.0.1:5001
+1740794818.277 - Network: Connected to peer VM 2 at 127.0.0.1:5002
+1740794818.287 - Network: Connected to peer VM 3 at 127.0.0.1:5003
+1740794818.295 - Network: Connected to peer VM 4 at 127.0.0.1:5004
+1740794818.299 - Network: Connected to peer VM 5 at 127.0.0.1:5005
+1740794818.304 - Network: Accepted connection from ('127.0.0.1', 50966)
+1740794818.320 - Network: Accepted connection from ('127.0.0.1', 50970)
+1740794818.337 - Network: Accepted connection from ('127.0.0.1', 50974)
+1740794818.360 - Network: Accepted connection from ('127.0.0.1', 50979)
+1740794818.373 - Internal event: clock ticked to 1.
+1740794818.876 - Received message: updated clock to 2. Queue length: 0
+1740794819.377 - Received message: updated clock to 6. Queue length: 0
+1740794819.882 - Received message: updated clock to 7. Queue length: 3
+1740794820.387 - Received message: updated clock to 8. Queue length: 2
+1740794820.892 - Received message: updated clock to 9. Queue length: 2
+1740794821.394 - Received message: updated clock to 10. Queue length: 2
+1740794821.894 - Received message: updated clock to 19. Queue length: 2
+1740794822.395 - Received message: updated clock to 24. Queue length: 2
+1740794822.900 - Received message: updated clock to 28. Queue length: 2
+1740794823.403 - Received message: updated clock to 33. Queue length: 2
+1740794823.908 - Received message: updated clock to 40. Queue length: 1
+1740794824.412 - Received message: updated clock to 46. Queue length: 3
+1740794824.913 - Received message: updated clock to 51. Queue length: 3
+1740794825.417 - Received message: updated clock to 53. Queue length: 2
+1740794825.923 - Received message: updated clock to 58. Queue length: 4
+1740794826.428 - Received message: updated clock to 63. Queue length: 4
+1740794826.931 - Received message: updated clock to 69. Queue length: 5
+1740794827.433 - Received message: updated clock to 74. Queue length: 5
+1740794827.936 - Received message: updated clock to 75. Queue length: 4

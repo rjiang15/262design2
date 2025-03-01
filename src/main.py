@@ -2,46 +2,60 @@
 
 import time
 import threading
+import argparse
 from virtual_machine import VirtualMachine
 
 def run_vm(vm, stop_event):
-    """Run the virtual machine event loop based on its tick rate until a stop signal is received."""
+    """Run the VM's event loop until stop_event is set."""
     tick_interval = 1.0 / vm.tick_rate
     while not stop_event.is_set():
         vm.run_tick()
         time.sleep(tick_interval)
 
-if __name__ == "__main__":
-    # Create a shutdown event
-    stop_event = threading.Event()
+def main():
+    # Set up command-line arguments.
+    parser = argparse.ArgumentParser(description="Distributed System Simulation")
+    parser.add_argument("--num_vms", type=int, default=3, 
+                        help="Number of virtual machines in the simulation (default: 3)")
+    parser.add_argument("--duration", type=int, default=60, 
+                        help="Simulation duration in seconds (default: 60)")
+    # Additional parameters (like base port, probability distributions, etc.) can be added here.
+    args = parser.parse_args()
 
-    # Initialize three virtual machines.
-    vm1 = VirtualMachine(vm_id=1)
-    vm2 = VirtualMachine(vm_id=2)
-    vm3 = VirtualMachine(vm_id=3)
-    vms = [vm1, vm2, vm3]
-    
-    # Set peers for each VM.
+    # Create the specified number of VMs.
+    num_vms = args.num_vms
+    vms = [VirtualMachine(vm_id=i+1) for i in range(num_vms)]
+
+    # Start network listeners for each VM.
+    for vm in vms:
+        vm.start_network()
+
+    # Connect each VM to its peers.
     for vm in vms:
         vm.set_peers(vms)
-    
-    # Start each VM's event loop in its own thread.
+
+    stop_event = threading.Event()
     threads = []
     for vm in vms:
         t = threading.Thread(target=run_vm, args=(vm, stop_event), daemon=True)
         t.start()
         threads.append(t)
-    
-    # Keep the main thread alive until a KeyboardInterrupt.
+
+    # Run the simulation for the specified duration.
     try:
-        while True:
+        start_time = time.time()
+        while time.time() - start_time < args.duration:
             time.sleep(1)
     except KeyboardInterrupt:
-        print("Shutdown signal received. Stopping simulation...")
+        print("Keyboard interrupt received, shutting down simulation...")
+    finally:
+        print("Stopping simulation...")
         stop_event.set()
         for t in threads:
             t.join()
-        # Shutdown each VM to close log files.
         for vm in vms:
             vm.shutdown()
         print("Simulation terminated gracefully.")
+
+if __name__ == "__main__":
+    main()
