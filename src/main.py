@@ -16,15 +16,27 @@ def main():
     # Set up command-line arguments.
     parser = argparse.ArgumentParser(description="Distributed System Simulation")
     parser.add_argument("--num_vms", type=int, default=3, 
-                        help="Number of virtual machines in the simulation (default: 3)")
+                        help="Number of virtual machines (default: 3)")
     parser.add_argument("--duration", type=int, default=60, 
                         help="Simulation duration in seconds (default: 60)")
-    # Additional parameters (like base port, probability distributions, etc.) can be added here.
+    parser.add_argument("--min_tick", type=int, default=1,
+                        help="Minimum tick rate for VMs (default: 1)")
+    parser.add_argument("--max_tick", type=int, default=6,
+                        help="Maximum tick rate for VMs (default: 6)")
+    parser.add_argument("--send_threshold", type=int, default=3,
+                        help="If random event <= this threshold, send messages (default: 3)")
     args = parser.parse_args()
 
-    # Create the specified number of VMs.
-    num_vms = args.num_vms
-    vms = [VirtualMachine(vm_id=i+1) for i in range(num_vms)]
+    # Create the specified number of VMs with configurable tick rate range and messaging threshold.
+    vms = [
+        VirtualMachine(
+            vm_id=i+1, 
+            tick_min=args.min_tick, 
+            tick_max=args.max_tick, 
+            send_threshold=args.send_threshold
+        )
+        for i in range(args.num_vms)
+    ]
 
     # Start network listeners for each VM.
     for vm in vms:
