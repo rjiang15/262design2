@@ -1,0 +1,29 @@
+1740794818.267 - Network: Listening on 127.0.0.1:5003
+1740794818.287 - Network: Accepted connection from ('127.0.0.1', 50963)
+1740794818.308 - Network: Accepted connection from ('127.0.0.1', 50967)
+1740794818.320 - Network: Connected to peer VM 1 at 127.0.0.1:5001
+1740794818.324 - Network: Connected to peer VM 2 at 127.0.0.1:5002
+1740794818.328 - Network: Connected to peer VM 4 at 127.0.0.1:5004
+1740794818.333 - Network: Connected to peer VM 5 at 127.0.0.1:5005
+1740794818.346 - Network: Accepted connection from ('127.0.0.1', 50976)
+1740794818.369 - Network: Accepted connection from ('127.0.0.1', 50981)
+1740794818.374 - Sent message to VM 1: clock is now 1.
+1740794818.876 - Internal event: clock ticked to 2.
+1740794819.379 - Internal event: clock ticked to 3.
+1740794819.882 - Received message: updated clock to 9. Queue length: 1
+1740794820.387 - Received message: updated clock to 12. Queue length: 0
+1740794820.892 - Received message: updated clock to 20. Queue length: 0
+1740794821.395 - Received message: updated clock to 26. Queue length: 0
+1740794821.896 - Received message: updated clock to 29. Queue length: 0
+1740794822.401 - Received message: updated clock to 35. Queue length: 0
+1740794822.906 - Received message: updated clock to 41. Queue length: 0
+1740794823.410 - Received message: updated clock to 48. Queue length: 0
+1740794823.915 - Received message: updated clock to 49. Queue length: 0
+1740794824.418 - Received message: updated clock to 55. Queue length: 1
+1740794824.921 - Received message: updated clock to 60. Queue length: 1
+1740794825.424 - Received message: updated clock to 65. Queue length: 0
+1740794825.929 - Received message: updated clock to 71. Queue length: 1
+1740794826.434 - Received message: updated clock to 72. Queue length: 1
+1740794826.935 - Received message: updated clock to 76. Queue length: 1
+1740794827.439 - Received message: updated clock to 81. Queue length: 1
+1740794827.940 - Received message: updated clock to 87. Queue length: 0
