@@ -1,128 +1,325 @@
-1740973420.783 - Network: Listening on 127.0.0.1:5001
-1740973420.800 - Network: Connected to peer VM 2 at 127.0.0.1:5002
-1740973420.818 - Network: Connected to peer VM 3 at 127.0.0.1:5003
-1740973420.823 - Network: Accepted connection from ('127.0.0.1', 62175)
-1740973420.832 - Network: Accepted connection from ('127.0.0.1', 62177)
-1740973420.837 - Internal event: clock ticked to 1.
-1740973421.342 - Received message: updated clock to 3. Queue length: 0
-1740973421.846 - Received message: updated clock to 6. Queue length: 0
-1740973422.351 - Received message: updated clock to 10. Queue length: 0
-1740973422.854 - Internal event: clock ticked to 11.
-1740973423.358 - Received message: updated clock to 16. Queue length: 2
-1740973423.859 - Received message: updated clock to 18. Queue length: 1
-1740973424.363 - Received message: updated clock to 19. Queue length: 1
-1740973424.866 - Received message: updated clock to 24. Queue length: 0
-1740973425.371 - Internal event: clock ticked to 25.
-1740973425.878 - Internal event: clock ticked to 26.
-1740973426.381 - Received message: updated clock to 32. Queue length: 0
-1740973426.882 - Internal event: clock ticked to 33.
-1740973427.387 - Received message: updated clock to 43. Queue length: 0
-1740973427.887 - Received message: updated clock to 47. Queue length: 0
-1740973428.392 - Received message: updated clock to 50. Queue length: 1
-1740973428.914 - Received message: updated clock to 51. Queue length: 0
-1740973429.414 - Internal event: clock ticked to 52.
-1740973429.917 - Received message: updated clock to 60. Queue length: 0
-1740973430.421 - Internal event: clock ticked to 61.
-1740973430.931 - Received message: updated clock to 65. Queue length: 0
-1740973431.432 - Internal event: clock ticked to 66.
-1740973431.934 - Received message: updated clock to 73. Queue length: 0
-1740973432.438 - Internal event: clock ticked to 74.
-1740973432.943 - Received message: updated clock to 80. Queue length: 0
-1740973433.448 - Internal event: clock ticked to 81.
-1740973433.953 - Internal event: clock ticked to 82.
-1740973434.457 - Received message: updated clock to 90. Queue length: 0
-1740973434.960 - Sent message to VM 2: clock is now 91.
-1740973434.960 - Sent message to VM 3: clock is now 92.
-1740973435.463 - Received message: updated clock to 95. Queue length: 1
-1740973435.966 - Received message: updated clock to 97. Queue length: 2
-1740973436.470 - Received message: updated clock to 98. Queue length: 2
-1740973436.970 - Received message: updated clock to 100. Queue length: 1
-1740973437.475 - Received message: updated clock to 101. Queue length: 0
-1740973437.978 - Internal event: clock ticked to 102.
-1740973438.483 - Received message: updated clock to 113. Queue length: 2
-1740973438.987 - Received message: updated clock to 114. Queue length: 1
-1740973439.491 - Received message: updated clock to 115. Queue length: 0
-1740973439.996 - Sent message to VM 2: clock is now 116.
-1740973439.996 - Sent message to VM 3: clock is now 117.
-1740973440.500 - Received message: updated clock to 125. Queue length: 0
-1740973441.000 - Received message: updated clock to 128. Queue length: 0
-1740973441.505 - Internal event: clock ticked to 129.
-1740973442.009 - Received message: updated clock to 135. Queue length: 0
-1740973442.514 - Internal event: clock ticked to 136.
-1740973443.019 - Received message: updated clock to 141. Queue length: 0
-1740973443.519 - Internal event: clock ticked to 142.
-1740973444.022 - Internal event: clock ticked to 143.
-1740973444.523 - Internal event: clock ticked to 144.
-1740973445.032 - Internal event: clock ticked to 145.
-1740973445.537 - Received message: updated clock to 156. Queue length: 0
-1740973446.042 - Received message: updated clock to 157. Queue length: 0
-1740973446.547 - Received message: updated clock to 162. Queue length: 0
-1740973447.048 - Internal event: clock ticked to 163.
-1740973447.553 - Received message: updated clock to 164. Queue length: 1
-1740973448.057 - Received message: updated clock to 168. Queue length: 2
-1740973448.558 - Received message: updated clock to 170. Queue length: 3
-1740973449.062 - Received message: updated clock to 172. Queue length: 2
-1740973449.562 - Received message: updated clock to 174. Queue length: 1
-1740973450.067 - Received message: updated clock to 175. Queue length: 1
-1740973450.592 - Received message: updated clock to 184. Queue length: 0
-1740973451.097 - Received message: updated clock to 189. Queue length: 0
-1740973451.598 - Received message: updated clock to 192. Queue length: 0
-1740973452.104 - Received message: updated clock to 197. Queue length: 0
-1740973452.605 - Received message: updated clock to 200. Queue length: 1
-1740973453.109 - Received message: updated clock to 201. Queue length: 1
-1740973453.610 - Received message: updated clock to 204. Queue length: 0
-1740973454.112 - Received message: updated clock to 211. Queue length: 0
-1740973454.613 - Internal event: clock ticked to 212.
-1740973455.116 - Received message: updated clock to 215. Queue length: 1
-1740973455.619 - Received message: updated clock to 217. Queue length: 0
-1740973456.124 - Received message: updated clock to 223. Queue length: 2
-1740973456.629 - Received message: updated clock to 224. Queue length: 1
-1740973457.130 - Received message: updated clock to 226. Queue length: 1
-1740973457.632 - Received message: updated clock to 232. Queue length: 1
-1740973458.137 - Received message: updated clock to 233. Queue length: 1
-1740973458.643 - Received message: updated clock to 238. Queue length: 0
-1740973459.146 - Internal event: clock ticked to 239.
-1740973459.651 - Received message: updated clock to 248. Queue length: 1
-1740973460.156 - Received message: updated clock to 249. Queue length: 0
-1740973460.662 - Received message: updated clock to 254. Queue length: 1
-1740973461.165 - Received message: updated clock to 255. Queue length: 0
-1740973461.671 - Internal event: clock ticked to 256.
-1740973462.174 - Sent message to VM 3: clock is now 257.
-1740973462.679 - Received message: updated clock to 264. Queue length: 0
-1740973463.181 - Internal event: clock ticked to 265.
-1740973463.684 - Sent message to VM 2: clock is now 266.
-1740973463.684 - Sent message to VM 3: clock is now 267.
-1740973464.189 - Internal event: clock ticked to 268.
-1740973464.690 - Sent message to VM 2: clock is now 269.
-1740973465.194 - Received message: updated clock to 280. Queue length: 1
-1740973465.696 - Received message: updated clock to 281. Queue length: 1
-1740973466.199 - Received message: updated clock to 285. Queue length: 1
-1740973466.699 - Received message: updated clock to 288. Queue length: 0
-1740973467.201 - Received message: updated clock to 292. Queue length: 1
-1740973467.702 - Received message: updated clock to 294. Queue length: 0
-1740973468.207 - Received message: updated clock to 296. Queue length: 0
-1740973468.713 - Received message: updated clock to 303. Queue length: 1
-1740973469.213 - Received message: updated clock to 305. Queue length: 0
-1740973469.725 - Received message: updated clock to 309. Queue length: 0
-1740973470.243 - Received message: updated clock to 313. Queue length: 0
-1740973470.748 - Received message: updated clock to 318. Queue length: 0
-1740973471.253 - Received message: updated clock to 321. Queue length: 0
-1740973471.757 - Received message: updated clock to 324. Queue length: 0
-1740973472.262 - Internal event: clock ticked to 325.
-1740973472.766 - Received message: updated clock to 330. Queue length: 0
-1740973473.271 - Internal event: clock ticked to 331.
-1740973473.776 - Internal event: clock ticked to 332.
-1740973474.281 - Internal event: clock ticked to 333.
-1740973474.786 - Received message: updated clock to 343. Queue length: 1
-1740973475.292 - Received message: updated clock to 346. Queue length: 1
-1740973475.853 - Received message: updated clock to 349. Queue length: 2
-1740973476.362 - Received message: updated clock to 350. Queue length: 2
-1740973476.865 - Received message: updated clock to 352. Queue length: 2
-1740973477.370 - Received message: updated clock to 354. Queue length: 2
-1740973477.871 - Received message: updated clock to 357. Queue length: 1
-1740973478.375 - Received message: updated clock to 361. Queue length: 1
-1740973478.892 - Received message: updated clock to 364. Queue length: 1
-1740973479.393 - Received message: updated clock to 370. Queue length: 1
-1740973479.893 - Received message: updated clock to 375. Queue length: 1
-1740973480.398 - Received message: updated clock to 380. Queue length: 1
-1740973480.903 - Received message: updated clock to 381. Queue length: 0
+1741022103.010 - Network: Listening on 127.0.0.1:5001
+1741022103.024 - Network: Connected to peer VM 2 at 127.0.0.1:5002
+1741022103.036 - Network: Connected to peer VM 3 at 127.0.0.1:5003
+1741022103.044 - Network: Accepted connection from ('127.0.0.1', 59621)
+1741022103.056 - Network: Accepted connection from ('127.0.0.1', 59623)
+1741022103.062 - Sent message to VM 3: clock is now 1.
+1741022103.267 - Internal event: clock ticked to 2.
+1741022103.469 - Sent message to VM 2: clock is now 3.
+1741022103.672 - Internal event: clock ticked to 4.
+1741022103.877 - Internal event: clock ticked to 5.
+1741022104.080 - Internal event: clock ticked to 6.
+1741022104.282 - Received message: updated clock to 10. Queue length: 0
+1741022104.485 - Internal event: clock ticked to 11.
+1741022104.690 - Internal event: clock ticked to 12.
+1741022104.896 - Sent message to VM 3: clock is now 13.
+1741022105.096 - Internal event: clock ticked to 14.
+1741022105.302 - Sent message to VM 2: clock is now 15.
+1741022105.504 - Internal event: clock ticked to 16.
+1741022105.705 - Internal event: clock ticked to 17.
+1741022105.910 - Internal event: clock ticked to 18.
+1741022106.115 - Internal event: clock ticked to 19.
+1741022106.321 - Internal event: clock ticked to 20.
+1741022106.526 - Sent message to VM 2: clock is now 21.
+1741022106.731 - Internal event: clock ticked to 22.
+1741022106.937 - Internal event: clock ticked to 23.
+1741022107.139 - Internal event: clock ticked to 24.
+1741022107.340 - Received message: updated clock to 28. Queue length: 0
+1741022107.546 - Received message: updated clock to 31. Queue length: 0
+1741022107.748 - Internal event: clock ticked to 32.
+1741022107.952 - Internal event: clock ticked to 33.
+1741022108.155 - Internal event: clock ticked to 34.
+1741022108.360 - Received message: updated clock to 37. Queue length: 0
+1741022108.566 - Received message: updated clock to 39. Queue length: 0
+1741022108.768 - Internal event: clock ticked to 40.
+1741022108.971 - Internal event: clock ticked to 41.
+1741022109.177 - Sent message to VM 2: clock is now 42.
+1741022109.177 - Sent message to VM 3: clock is now 43.
+1741022109.382 - Sent message to VM 2: clock is now 44.
+1741022109.588 - Internal event: clock ticked to 45.
+1741022109.793 - Internal event: clock ticked to 46.
+1741022109.998 - Sent message to VM 3: clock is now 47.
+1741022110.204 - Internal event: clock ticked to 48.
+1741022110.409 - Sent message to VM 3: clock is now 49.
+1741022110.611 - Sent message to VM 3: clock is now 50.
+1741022110.816 - Internal event: clock ticked to 51.
+1741022111.019 - Internal event: clock ticked to 52.
+1741022111.224 - Internal event: clock ticked to 53.
+1741022111.425 - Sent message to VM 2: clock is now 54.
+1741022111.626 - Internal event: clock ticked to 55.
+1741022111.832 - Internal event: clock ticked to 56.
+1741022112.037 - Internal event: clock ticked to 57.
+1741022112.238 - Sent message to VM 2: clock is now 58.
+1741022112.444 - Received message: updated clock to 63. Queue length: 0
+1741022112.647 - Received message: updated clock to 65. Queue length: 0
+1741022112.852 - Internal event: clock ticked to 66.
+1741022113.057 - Internal event: clock ticked to 67.
+1741022113.263 - Internal event: clock ticked to 68.
+1741022113.468 - Sent message to VM 2: clock is now 69.
+1741022113.673 - Internal event: clock ticked to 70.
+1741022113.879 - Internal event: clock ticked to 71.
+1741022114.084 - Internal event: clock ticked to 72.
+1741022114.287 - Internal event: clock ticked to 73.
+1741022114.490 - Internal event: clock ticked to 74.
+1741022114.694 - Internal event: clock ticked to 75.
+1741022114.899 - Internal event: clock ticked to 76.
+1741022115.102 - Received message: updated clock to 80. Queue length: 0
+1741022115.303 - Received message: updated clock to 82. Queue length: 0
+1741022115.508 - Internal event: clock ticked to 83.
+1741022115.714 - Sent message to VM 3: clock is now 84.
+1741022115.919 - Internal event: clock ticked to 85.
+1741022116.124 - Internal event: clock ticked to 86.
+1741022116.327 - Sent message to VM 2: clock is now 87.
+1741022116.528 - Internal event: clock ticked to 88.
+1741022116.730 - Received message: updated clock to 92. Queue length: 0
+1741022116.931 - Internal event: clock ticked to 93.
+1741022117.133 - Internal event: clock ticked to 94.
+1741022117.338 - Sent message to VM 3: clock is now 95.
+1741022117.543 - Internal event: clock ticked to 96.
+1741022117.749 - Internal event: clock ticked to 97.
+1741022117.952 - Sent message to VM 2: clock is now 98.
+1741022118.157 - Sent message to VM 2: clock is now 99.
+1741022118.361 - Internal event: clock ticked to 100.
+1741022118.562 - Received message: updated clock to 103. Queue length: 0
+1741022118.767 - Received message: updated clock to 106. Queue length: 0
+1741022118.969 - Internal event: clock ticked to 107.
+1741022119.173 - Internal event: clock ticked to 108.
+1741022119.378 - Received message: updated clock to 110. Queue length: 0
+1741022119.584 - Internal event: clock ticked to 111.
+1741022119.789 - Internal event: clock ticked to 112.
+1741022119.994 - Internal event: clock ticked to 113.
+1741022120.199 - Internal event: clock ticked to 114.
+1741022120.402 - Internal event: clock ticked to 115.
+1741022120.607 - Received message: updated clock to 117. Queue length: 0
+1741022120.813 - Sent message to VM 3: clock is now 118.
+1741022121.018 - Received message: updated clock to 119. Queue length: 0
+1741022121.219 - Internal event: clock ticked to 120.
+1741022121.420 - Internal event: clock ticked to 121.
+1741022121.624 - Internal event: clock ticked to 122.
+1741022121.828 - Sent message to VM 2: clock is now 123.
+1741022122.029 - Received message: updated clock to 127. Queue length: 0
+1741022122.233 - Internal event: clock ticked to 128.
+1741022122.438 - Internal event: clock ticked to 129.
+1741022122.640 - Received message: updated clock to 131. Queue length: 0
+1741022122.844 - Sent message to VM 2: clock is now 132.
+1741022122.844 - Sent message to VM 3: clock is now 133.
+1741022123.049 - Sent message to VM 3: clock is now 134.
+1741022123.251 - Sent message to VM 2: clock is now 135.
+1741022123.457 - Internal event: clock ticked to 136.
+1741022123.661 - Sent message to VM 2: clock is now 137.
+1741022123.863 - Sent message to VM 3: clock is now 138.
+1741022124.064 - Received message: updated clock to 142. Queue length: 0
+1741022124.269 - Internal event: clock ticked to 143.
+1741022124.474 - Received message: updated clock to 144. Queue length: 0
+1741022124.680 - Sent message to VM 2: clock is now 145.
+1741022124.680 - Sent message to VM 3: clock is now 146.
+1741022124.885 - Internal event: clock ticked to 147.
+1741022125.090 - Internal event: clock ticked to 148.
+1741022125.291 - Received message: updated clock to 151. Queue length: 0
+1741022125.494 - Internal event: clock ticked to 152.
+1741022125.696 - Internal event: clock ticked to 153.
+1741022125.901 - Internal event: clock ticked to 154.
+1741022126.102 - Received message: updated clock to 155. Queue length: 0
+1741022126.305 - Internal event: clock ticked to 156.
+1741022126.510 - Received message: updated clock to 158. Queue length: 0
+1741022126.716 - Sent message to VM 2: clock is now 159.
+1741022126.921 - Internal event: clock ticked to 160.
+1741022127.123 - Internal event: clock ticked to 161.
+1741022127.328 - Received message: updated clock to 164. Queue length: 0
+1741022127.533 - Internal event: clock ticked to 165.
+1741022127.739 - Sent message to VM 2: clock is now 166.
+1741022127.739 - Sent message to VM 3: clock is now 167.
+1741022127.939 - Internal event: clock ticked to 168.
+1741022128.144 - Internal event: clock ticked to 169.
+1741022128.350 - Internal event: clock ticked to 170.
+1741022128.552 - Internal event: clock ticked to 171.
+1741022128.757 - Sent message to VM 2: clock is now 172.
+1741022128.962 - Internal event: clock ticked to 173.
+1741022129.167 - Received message: updated clock to 176. Queue length: 0
+1741022129.370 - Received message: updated clock to 178. Queue length: 0
+1741022129.571 - Sent message to VM 2: clock is now 179.
+1741022129.571 - Sent message to VM 3: clock is now 180.
+1741022129.773 - Internal event: clock ticked to 181.
+1741022129.977 - Internal event: clock ticked to 182.
+1741022130.178 - Internal event: clock ticked to 183.
+1741022130.383 - Received message: updated clock to 185. Queue length: 0
+1741022130.588 - Sent message to VM 2: clock is now 186.
+1741022130.588 - Sent message to VM 3: clock is now 187.
+1741022130.793 - Internal event: clock ticked to 188.
+1741022130.994 - Received message: updated clock to 190. Queue length: 0
+1741022131.197 - Sent message to VM 2: clock is now 191.
+1741022131.197 - Sent message to VM 3: clock is now 192.
+1741022131.402 - Sent message to VM 2: clock is now 193.
+1741022131.402 - Sent message to VM 3: clock is now 194.
+1741022131.603 - Internal event: clock ticked to 195.
+1741022131.808 - Internal event: clock ticked to 196.
+1741022132.013 - Internal event: clock ticked to 197.
+1741022132.218 - Internal event: clock ticked to 198.
+1741022132.424 - Sent message to VM 3: clock is now 199.
+1741022132.626 - Internal event: clock ticked to 200.
+1741022132.831 - Internal event: clock ticked to 201.
+1741022133.032 - Internal event: clock ticked to 202.
+1741022133.235 - Received message: updated clock to 206. Queue length: 0
+1741022133.439 - Internal event: clock ticked to 207.
+1741022133.644 - Internal event: clock ticked to 208.
+1741022133.849 - Received message: updated clock to 211. Queue length: 0
+1741022134.054 - Sent message to VM 2: clock is now 212.
+1741022134.256 - Internal event: clock ticked to 213.
+1741022134.458 - Internal event: clock ticked to 214.
+1741022134.661 - Internal event: clock ticked to 215.
+1741022134.863 - Internal event: clock ticked to 216.
+1741022135.068 - Internal event: clock ticked to 217.
+1741022135.274 - Received message: updated clock to 219. Queue length: 0
+1741022135.479 - Internal event: clock ticked to 220.
+1741022135.684 - Internal event: clock ticked to 221.
+1741022135.885 - Internal event: clock ticked to 222.
+1741022136.088 - Internal event: clock ticked to 223.
+1741022136.294 - Internal event: clock ticked to 224.
+1741022136.499 - Sent message to VM 2: clock is now 225.
+1741022136.499 - Sent message to VM 3: clock is now 226.
+1741022136.702 - Internal event: clock ticked to 227.
+1741022136.907 - Sent message to VM 3: clock is now 228.
+1741022137.111 - Internal event: clock ticked to 229.
+1741022137.317 - Internal event: clock ticked to 230.
+1741022137.522 - Internal event: clock ticked to 231.
+1741022137.725 - Sent message to VM 2: clock is now 232.
+1741022137.930 - Sent message to VM 2: clock is now 233.
+1741022138.131 - Internal event: clock ticked to 234.
+1741022138.336 - Received message: updated clock to 238. Queue length: 0
+1741022138.541 - Internal event: clock ticked to 239.
+1741022138.745 - Internal event: clock ticked to 240.
+1741022138.947 - Internal event: clock ticked to 241.
+1741022139.151 - Internal event: clock ticked to 242.
+1741022139.352 - Received message: updated clock to 245. Queue length: 0
+1741022139.552 - Sent message to VM 2: clock is now 246.
+1741022139.553 - Sent message to VM 3: clock is now 247.
+1741022139.758 - Sent message to VM 2: clock is now 248.
+1741022139.963 - Internal event: clock ticked to 249.
+1741022140.168 - Sent message to VM 2: clock is now 250.
+1741022140.374 - Received message: updated clock to 253. Queue length: 0
+1741022140.579 - Received message: updated clock to 254. Queue length: 0
+1741022140.783 - Internal event: clock ticked to 255.
+1741022140.983 - Internal event: clock ticked to 256.
+1741022141.183 - Internal event: clock ticked to 257.
+1741022141.387 - Received message: updated clock to 259. Queue length: 0
+1741022141.593 - Sent message to VM 2: clock is now 260.
+1741022141.798 - Sent message to VM 2: clock is now 261.
+1741022141.798 - Sent message to VM 3: clock is now 262.
+1741022142.002 - Sent message to VM 2: clock is now 263.
+1741022142.002 - Sent message to VM 3: clock is now 264.
+1741022142.208 - Internal event: clock ticked to 265.
+1741022142.413 - Sent message to VM 3: clock is now 266.
+1741022142.616 - Sent message to VM 2: clock is now 267.
+1741022142.819 - Sent message to VM 3: clock is now 268.
+1741022143.024 - Internal event: clock ticked to 269.
+1741022143.229 - Received message: updated clock to 272. Queue length: 0
+1741022143.434 - Received message: updated clock to 274. Queue length: 0
+1741022143.640 - Sent message to VM 2: clock is now 275.
+1741022143.640 - Sent message to VM 3: clock is now 276.
+1741022143.844 - Sent message to VM 3: clock is now 277.
+1741022144.044 - Sent message to VM 2: clock is now 278.
+1741022144.044 - Sent message to VM 3: clock is now 279.
+1741022144.250 - Internal event: clock ticked to 280.
+1741022144.455 - Internal event: clock ticked to 281.
+1741022144.656 - Internal event: clock ticked to 282.
+1741022144.860 - Internal event: clock ticked to 283.
+1741022145.062 - Internal event: clock ticked to 284.
+1741022145.267 - Sent message to VM 2: clock is now 285.
+1741022145.267 - Sent message to VM 3: clock is now 286.
+1741022145.470 - Sent message to VM 2: clock is now 287.
+1741022145.675 - Internal event: clock ticked to 288.
+1741022145.877 - Sent message to VM 3: clock is now 289.
+1741022146.077 - Internal event: clock ticked to 290.
+1741022146.283 - Received message: updated clock to 293. Queue length: 0
+1741022146.484 - Sent message to VM 3: clock is now 294.
+1741022146.686 - Internal event: clock ticked to 295.
+1741022146.891 - Sent message to VM 2: clock is now 296.
+1741022146.891 - Sent message to VM 3: clock is now 297.
+1741022147.096 - Received message: updated clock to 300. Queue length: 0
+1741022147.301 - Received message: updated clock to 301. Queue length: 0
+1741022147.506 - Received message: updated clock to 303. Queue length: 0
+1741022147.709 - Received message: updated clock to 304. Queue length: 0
+1741022147.914 - Internal event: clock ticked to 305.
+1741022148.119 - Received message: updated clock to 306. Queue length: 0
+1741022148.324 - Sent message to VM 3: clock is now 307.
+1741022148.529 - Sent message to VM 2: clock is now 308.
+1741022148.529 - Sent message to VM 3: clock is now 309.
+1741022148.730 - Internal event: clock ticked to 310.
+1741022148.935 - Received message: updated clock to 312. Queue length: 0
+1741022149.137 - Sent message to VM 2: clock is now 313.
+1741022149.137 - Sent message to VM 3: clock is now 314.
+1741022149.342 - Internal event: clock ticked to 315.
+1741022149.543 - Internal event: clock ticked to 316.
+1741022149.744 - Internal event: clock ticked to 317.
+1741022149.946 - Received message: updated clock to 319. Queue length: 0
+1741022150.151 - Internal event: clock ticked to 320.
+1741022150.356 - Internal event: clock ticked to 321.
+1741022150.562 - Received message: updated clock to 324. Queue length: 0
+1741022150.767 - Internal event: clock ticked to 325.
+1741022150.972 - Internal event: clock ticked to 326.
+1741022151.177 - Internal event: clock ticked to 327.
+1741022151.382 - Internal event: clock ticked to 328.
+1741022151.587 - Internal event: clock ticked to 329.
+1741022151.792 - Internal event: clock ticked to 330.
+1741022151.994 - Received message: updated clock to 332. Queue length: 0
+1741022152.199 - Internal event: clock ticked to 333.
+1741022152.402 - Internal event: clock ticked to 334.
+1741022152.605 - Internal event: clock ticked to 335.
+1741022152.811 - Sent message to VM 2: clock is now 336.
+1741022153.012 - Received message: updated clock to 339. Queue length: 0
+1741022153.218 - Received message: updated clock to 340. Queue length: 0
+1741022153.419 - Internal event: clock ticked to 341.
+1741022153.624 - Internal event: clock ticked to 342.
+1741022153.829 - Internal event: clock ticked to 343.
+1741022154.029 - Internal event: clock ticked to 344.
+1741022154.234 - Internal event: clock ticked to 345.
+1741022154.439 - Internal event: clock ticked to 346.
+1741022154.644 - Internal event: clock ticked to 347.
+1741022154.845 - Sent message to VM 2: clock is now 348.
+1741022155.047 - Internal event: clock ticked to 349.
+1741022155.252 - Received message: updated clock to 352. Queue length: 0
+1741022155.456 - Internal event: clock ticked to 353.
+1741022155.661 - Internal event: clock ticked to 354.
+1741022155.866 - Internal event: clock ticked to 355.
+1741022156.071 - Internal event: clock ticked to 356.
+1741022156.272 - Received message: updated clock to 359. Queue length: 0
+1741022156.477 - Received message: updated clock to 361. Queue length: 0
+1741022156.681 - Sent message to VM 2: clock is now 362.
+1741022156.681 - Sent message to VM 3: clock is now 363.
+1741022156.885 - Internal event: clock ticked to 364.
+1741022157.090 - Internal event: clock ticked to 365.
+1741022157.295 - Received message: updated clock to 367. Queue length: 0
+1741022157.499 - Internal event: clock ticked to 368.
+1741022157.701 - Internal event: clock ticked to 369.
+1741022157.906 - Internal event: clock ticked to 370.
+1741022158.111 - Internal event: clock ticked to 371.
+1741022158.316 - Received message: updated clock to 375. Queue length: 0
+1741022158.519 - Sent message to VM 2: clock is now 376.
+1741022158.724 - Internal event: clock ticked to 377.
+1741022158.924 - Internal event: clock ticked to 378.
+1741022159.125 - Internal event: clock ticked to 379.
+1741022159.330 - Internal event: clock ticked to 380.
+1741022159.535 - Internal event: clock ticked to 381.
+1741022159.740 - Received message: updated clock to 383. Queue length: 0
+1741022159.944 - Internal event: clock ticked to 384.
+1741022160.149 - Received message: updated clock to 386. Queue length: 0
+1741022160.352 - Internal event: clock ticked to 387.
+1741022160.555 - Internal event: clock ticked to 388.
+1741022160.757 - Internal event: clock ticked to 389.
+1741022160.963 - Sent message to VM 2: clock is now 390.
+1741022160.963 - Sent message to VM 3: clock is now 391.
+1741022161.164 - Internal event: clock ticked to 392.
+1741022161.366 - Received message: updated clock to 394. Queue length: 0
+1741022161.572 - Sent message to VM 2: clock is now 395.
+1741022161.572 - Sent message to VM 3: clock is now 396.
+1741022161.774 - Sent message to VM 2: clock is now 397.
+1741022161.774 - Sent message to VM 3: clock is now 398.
+1741022161.979 - Internal event: clock ticked to 399.
+1741022162.184 - Received message: updated clock to 401. Queue length: 0
+1741022162.390 - Internal event: clock ticked to 402.
+1741022162.595 - Internal event: clock ticked to 403.
+1741022162.800 - Sent message to VM 2: clock is now 404.
+1741022162.800 - Sent message to VM 3: clock is now 405.
+1741022163.006 - Sent message to VM 2: clock is now 406.
+1741022163.006 - Sent message to VM 3: clock is now 407.
+1741022163.209 - Internal event: clock ticked to 408.
