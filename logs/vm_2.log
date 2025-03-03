@@ -1,197 +1,587 @@
-1741023360.390 - Network: Listening on 127.0.0.1:5002
-1741023360.404 - Network: Accepted connection from ('127.0.0.1', 58198)
-1741023360.422 - Network: Connected to peer VM 1 at 127.0.0.1:5001
-1741023360.427 - Network: Connected to peer VM 3 at 127.0.0.1:5003
-1741023360.443 - Network: Accepted connection from ('127.0.0.1', 58204)
-1741023360.443 - Internal event: clock ticked to 1.
-1741023360.782 - Sent message to VM 3: clock is now 2.
-1741023361.116 - Sent message to VM 3: clock is now 3.
-1741023361.455 - Sent message to VM 1: clock is now 4.
-1741023361.455 - Sent message to VM 3: clock is now 5.
-1741023361.793 - Received message: updated clock to 9. Queue length: 0
-1741023362.132 - Internal event: clock ticked to 10.
-1741023362.469 - Internal event: clock ticked to 11.
-1741023362.803 - Internal event: clock ticked to 12.
-1741023363.139 - Internal event: clock ticked to 13.
-1741023363.477 - Internal event: clock ticked to 14.
-1741023363.816 - Received message: updated clock to 16. Queue length: 1
-1741023364.150 - Received message: updated clock to 20. Queue length: 0
-1741023364.488 - Sent message to VM 1: clock is now 21.
-1741023364.489 - Sent message to VM 3: clock is now 22.
-1741023364.825 - Internal event: clock ticked to 23.
-1741023365.159 - Internal event: clock ticked to 24.
-1741023365.498 - Internal event: clock ticked to 25.
-1741023365.832 - Received message: updated clock to 26. Queue length: 0
-1741023366.167 - Sent message to VM 3: clock is now 27.
-1741023366.506 - Sent message to VM 3: clock is now 28.
-1741023366.842 - Internal event: clock ticked to 29.
-1741023367.178 - Received message: updated clock to 30. Queue length: 0
-1741023367.516 - Internal event: clock ticked to 31.
-1741023367.851 - Received message: updated clock to 37. Queue length: 0
-1741023368.189 - Internal event: clock ticked to 38.
-1741023368.528 - Sent message to VM 1: clock is now 39.
-1741023368.866 - Internal event: clock ticked to 40.
-1741023369.205 - Received message: updated clock to 42. Queue length: 1
-1741023369.544 - Received message: updated clock to 43. Queue length: 1
-1741023369.879 - Received message: updated clock to 44. Queue length: 0
-1741023370.218 - Internal event: clock ticked to 45.
-1741023370.553 - Internal event: clock ticked to 46.
-1741023370.892 - Internal event: clock ticked to 47.
-1741023371.230 - Internal event: clock ticked to 48.
-1741023371.569 - Received message: updated clock to 52. Queue length: 0
-1741023371.907 - Received message: updated clock to 54. Queue length: 1
-1741023372.241 - Received message: updated clock to 58. Queue length: 0
-1741023372.580 - Received message: updated clock to 61. Queue length: 0
-1741023372.919 - Internal event: clock ticked to 62.
-1741023373.257 - Received message: updated clock to 64. Queue length: 0
-1741023373.593 - Received message: updated clock to 66. Queue length: 0
-1741023373.929 - Received message: updated clock to 68. Queue length: 0
-1741023374.266 - Received message: updated clock to 69. Queue length: 0
-1741023374.604 - Internal event: clock ticked to 70.
-1741023374.938 - Received message: updated clock to 73. Queue length: 0
-1741023375.274 - Received message: updated clock to 75. Queue length: 0
-1741023375.610 - Internal event: clock ticked to 76.
-1741023375.947 - Received message: updated clock to 77. Queue length: 0
-1741023376.283 - Sent message to VM 1: clock is now 78.
-1741023376.283 - Sent message to VM 3: clock is now 79.
-1741023376.620 - Sent message to VM 1: clock is now 80.
-1741023376.957 - Received message: updated clock to 81. Queue length: 0
-1741023377.296 - Received message: updated clock to 85. Queue length: 0
-1741023377.632 - Received message: updated clock to 87. Queue length: 0
-1741023377.971 - Sent message to VM 1: clock is now 88.
-1741023377.971 - Sent message to VM 3: clock is now 89.
-1741023378.310 - Received message: updated clock to 90. Queue length: 0
-1741023378.649 - Sent message to VM 1: clock is now 91.
-1741023378.649 - Sent message to VM 3: clock is now 92.
-1741023378.988 - Received message: updated clock to 96. Queue length: 0
-1741023379.325 - Internal event: clock ticked to 97.
-1741023379.663 - Internal event: clock ticked to 98.
-1741023379.997 - Received message: updated clock to 99. Queue length: 0
-1741023380.332 - Sent message to VM 1: clock is now 100.
-1741023380.667 - Internal event: clock ticked to 101.
-1741023381.006 - Internal event: clock ticked to 102.
-1741023381.342 - Received message: updated clock to 104. Queue length: 1
-1741023381.681 - Received message: updated clock to 106. Queue length: 0
-1741023382.019 - Internal event: clock ticked to 107.
-1741023382.357 - Received message: updated clock to 109. Queue length: 0
-1741023382.694 - Internal event: clock ticked to 110.
-1741023383.029 - Sent message to VM 3: clock is now 111.
-1741023383.366 - Internal event: clock ticked to 112.
-1741023383.704 - Internal event: clock ticked to 113.
-1741023384.041 - Received message: updated clock to 116. Queue length: 0
-1741023384.380 - Received message: updated clock to 117. Queue length: 0
-1741023384.719 - Received message: updated clock to 120. Queue length: 0
-1741023385.053 - Internal event: clock ticked to 121.
-1741023385.388 - Internal event: clock ticked to 122.
-1741023385.722 - Internal event: clock ticked to 123.
-1741023386.059 - Internal event: clock ticked to 124.
-1741023386.393 - Received message: updated clock to 127. Queue length: 0
-1741023386.732 - Internal event: clock ticked to 128.
-1741023387.068 - Internal event: clock ticked to 129.
-1741023387.402 - Received message: updated clock to 130. Queue length: 0
-1741023387.740 - Internal event: clock ticked to 131.
-1741023388.074 - Internal event: clock ticked to 132.
-1741023388.413 - Received message: updated clock to 137. Queue length: 0
-1741023388.751 - Received message: updated clock to 138. Queue length: 0
-1741023389.088 - Received message: updated clock to 139. Queue length: 0
-1741023389.424 - Internal event: clock ticked to 140.
-1741023389.762 - Internal event: clock ticked to 141.
-1741023390.097 - Internal event: clock ticked to 142.
-1741023390.435 - Received message: updated clock to 146. Queue length: 0
-1741023390.771 - Internal event: clock ticked to 147.
-1741023391.108 - Sent message to VM 1: clock is now 148.
-1741023391.108 - Sent message to VM 3: clock is now 149.
-1741023391.445 - Received message: updated clock to 153. Queue length: 0
-1741023391.782 - Internal event: clock ticked to 154.
-1741023392.121 - Internal event: clock ticked to 155.
-1741023392.460 - Received message: updated clock to 156. Queue length: 2
-1741023392.794 - Received message: updated clock to 157. Queue length: 2
-1741023393.129 - Received message: updated clock to 158. Queue length: 1
-1741023393.463 - Received message: updated clock to 160. Queue length: 1
-1741023393.801 - Received message: updated clock to 164. Queue length: 0
-1741023394.138 - Internal event: clock ticked to 165.
-1741023394.474 - Internal event: clock ticked to 166.
-1741023394.813 - Internal event: clock ticked to 167.
-1741023395.152 - Internal event: clock ticked to 168.
-1741023395.489 - Internal event: clock ticked to 169.
-1741023395.828 - Received message: updated clock to 170. Queue length: 0
-1741023396.166 - Internal event: clock ticked to 171.
-1741023396.504 - Received message: updated clock to 176. Queue length: 1
-1741023396.841 - Received message: updated clock to 177. Queue length: 0
-1741023397.175 - Sent message to VM 1: clock is now 178.
-1741023397.514 - Internal event: clock ticked to 179.
-1741023397.852 - Internal event: clock ticked to 180.
-1741023398.191 - Received message: updated clock to 182. Queue length: 0
-1741023398.525 - Internal event: clock ticked to 183.
-1741023398.863 - Sent message to VM 1: clock is now 184.
-1741023398.863 - Sent message to VM 3: clock is now 185.
-1741023399.202 - Sent message to VM 1: clock is now 186.
-1741023399.202 - Sent message to VM 3: clock is now 187.
-1741023399.541 - Internal event: clock ticked to 188.
-1741023399.878 - Sent message to VM 3: clock is now 189.
-1741023400.216 - Internal event: clock ticked to 190.
-1741023400.554 - Internal event: clock ticked to 191.
-1741023400.892 - Received message: updated clock to 196. Queue length: 0
-1741023401.231 - Received message: updated clock to 197. Queue length: 0
-1741023401.570 - Sent message to VM 1: clock is now 198.
-1741023401.904 - Sent message to VM 3: clock is now 199.
-1741023402.242 - Sent message to VM 3: clock is now 200.
-1741023402.581 - Sent message to VM 1: clock is now 201.
-1741023402.581 - Sent message to VM 3: clock is now 202.
-1741023402.920 - Received message: updated clock to 204. Queue length: 0
-1741023403.258 - Sent message to VM 1: clock is now 205.
-1741023403.597 - Internal event: clock ticked to 206.
-1741023403.935 - Received message: updated clock to 208. Queue length: 0
-1741023404.274 - Internal event: clock ticked to 209.
-1741023404.609 - Internal event: clock ticked to 210.
-1741023404.947 - Internal event: clock ticked to 211.
-1741023405.286 - Internal event: clock ticked to 212.
-1741023405.623 - Internal event: clock ticked to 213.
-1741023405.958 - Received message: updated clock to 217. Queue length: 0
-1741023406.294 - Internal event: clock ticked to 218.
-1741023406.633 - Sent message to VM 1: clock is now 219.
-1741023406.971 - Received message: updated clock to 222. Queue length: 0
-1741023407.308 - Internal event: clock ticked to 223.
-1741023407.647 - Internal event: clock ticked to 224.
-1741023407.985 - Received message: updated clock to 225. Queue length: 0
-1741023408.322 - Received message: updated clock to 226. Queue length: 0
-1741023408.659 - Received message: updated clock to 228. Queue length: 0
-1741023408.993 - Sent message to VM 1: clock is now 229.
-1741023408.994 - Sent message to VM 3: clock is now 230.
-1741023409.332 - Sent message to VM 1: clock is now 231.
-1741023409.671 - Internal event: clock ticked to 232.
-1741023410.008 - Internal event: clock ticked to 233.
-1741023410.346 - Received message: updated clock to 235. Queue length: 0
-1741023410.685 - Internal event: clock ticked to 236.
-1741023411.024 - Sent message to VM 1: clock is now 237.
-1741023411.360 - Internal event: clock ticked to 238.
-1741023411.696 - Internal event: clock ticked to 239.
-1741023412.034 - Received message: updated clock to 242. Queue length: 0
-1741023412.372 - Received message: updated clock to 245. Queue length: 0
-1741023412.711 - Received message: updated clock to 246. Queue length: 1
-1741023413.049 - Received message: updated clock to 247. Queue length: 0
-1741023413.384 - Received message: updated clock to 249. Queue length: 0
-1741023413.721 - Received message: updated clock to 250. Queue length: 0
-1741023414.059 - Received message: updated clock to 253. Queue length: 0
-1741023414.393 - Internal event: clock ticked to 254.
-1741023414.732 - Internal event: clock ticked to 255.
-1741023415.066 - Received message: updated clock to 257. Queue length: 0
-1741023415.404 - Received message: updated clock to 258. Queue length: 0
-1741023415.741 - Internal event: clock ticked to 259.
-1741023416.074 - Received message: updated clock to 260. Queue length: 0
-1741023416.412 - Internal event: clock ticked to 261.
-1741023416.749 - Sent message to VM 1: clock is now 262.
-1741023417.084 - Sent message to VM 3: clock is now 263.
-1741023417.419 - Internal event: clock ticked to 264.
-1741023417.753 - Internal event: clock ticked to 265.
-1741023418.091 - Internal event: clock ticked to 266.
-1741023418.430 - Sent message to VM 1: clock is now 267.
-1741023418.430 - Sent message to VM 3: clock is now 268.
-1741023418.768 - Internal event: clock ticked to 269.
-1741023419.107 - Sent message to VM 1: clock is now 270.
-1741023419.107 - Sent message to VM 3: clock is now 271.
-1741023419.441 - Sent message to VM 1: clock is now 272.
-1741023419.775 - Internal event: clock ticked to 273.
-1741023420.109 - Sent message to VM 1: clock is now 274.
-1741023420.109 - Sent message to VM 3: clock is now 275.
-1741023420.448 - Internal event: clock ticked to 276.
+1741028526.689 - Network: Listening on 127.0.0.1:5002
+1741028526.702 - Network: Accepted connection from ('127.0.0.1', 50448)
+1741028526.720 - Network: Connected to peer VM 1 at 127.0.0.1:5001
+1741028526.725 - Network: Connected to peer VM 3 at 127.0.0.1:5003
+1741028526.736 - Network: Accepted connection from ('127.0.0.1', 50453)
+1741028526.736 - Sent message to VM 1: clock is now 1.
+1741028526.736 - Sent message to VM 3: clock is now 2.
+1741028526.841 - Internal event: clock ticked to 3.
+1741028526.946 - Received message: updated clock to 12. Queue length: 0
+1741028527.052 - Received message: updated clock to 20. Queue length: 0
+1741028527.153 - Received message: updated clock to 32. Queue length: 1
+1741028527.255 - Received message: updated clock to 38. Queue length: 2
+1741028527.357 - Received message: updated clock to 43. Queue length: 2
+1741028527.462 - Received message: updated clock to 45. Queue length: 2
+1741028527.563 - Received message: updated clock to 52. Queue length: 2
+1741028527.664 - Received message: updated clock to 64. Queue length: 3
+1741028527.769 - Received message: updated clock to 70. Queue length: 3
+1741028527.872 - Received message: updated clock to 77. Queue length: 3
+1741028527.977 - Received message: updated clock to 81. Queue length: 2
+1741028528.081 - Received message: updated clock to 91. Queue length: 1
+1741028528.182 - Received message: updated clock to 100. Queue length: 1
+1741028528.288 - Received message: updated clock to 120. Queue length: 2
+1741028528.391 - Received message: updated clock to 133. Queue length: 1
+1741028528.496 - Received message: updated clock to 137. Queue length: 1
+1741028528.601 - Received message: updated clock to 149. Queue length: 2
+1741028528.707 - Received message: updated clock to 162. Queue length: 1
+1741028528.807 - Received message: updated clock to 164. Queue length: 1
+1741028528.909 - Received message: updated clock to 182. Queue length: 2
+1741028529.014 - Received message: updated clock to 188. Queue length: 1
+1741028529.119 - Received message: updated clock to 191. Queue length: 1
+1741028529.222 - Received message: updated clock to 208. Queue length: 1
+1741028529.323 - Received message: updated clock to 213. Queue length: 3
+1741028529.429 - Received message: updated clock to 220. Queue length: 5
+1741028529.530 - Received message: updated clock to 224. Queue length: 8
+1741028529.630 - Received message: updated clock to 226. Queue length: 11
+1741028529.732 - Received message: updated clock to 229. Queue length: 10
+1741028529.836 - Received message: updated clock to 232. Queue length: 10
+1741028529.941 - Received message: updated clock to 237. Queue length: 10
+1741028530.043 - Received message: updated clock to 239. Queue length: 11
+1741028530.148 - Received message: updated clock to 243. Queue length: 12
+1741028530.249 - Received message: updated clock to 245. Queue length: 11
+1741028530.355 - Received message: updated clock to 247. Queue length: 12
+1741028530.457 - Received message: updated clock to 251. Queue length: 12
+1741028530.562 - Received message: updated clock to 255. Queue length: 11
+1741028530.666 - Received message: updated clock to 257. Queue length: 13
+1741028530.766 - Received message: updated clock to 258. Queue length: 13
+1741028530.871 - Received message: updated clock to 272. Queue length: 15
+1741028530.972 - Received message: updated clock to 284. Queue length: 15
+1741028531.076 - Received message: updated clock to 290. Queue length: 17
+1741028531.181 - Received message: updated clock to 292. Queue length: 18
+1741028531.286 - Received message: updated clock to 298. Queue length: 18
+1741028531.391 - Received message: updated clock to 300. Queue length: 18
+1741028531.496 - Received message: updated clock to 315. Queue length: 20
+1741028531.600 - Received message: updated clock to 320. Queue length: 21
+1741028531.706 - Received message: updated clock to 326. Queue length: 22
+1741028531.811 - Received message: updated clock to 341. Queue length: 23
+1741028531.916 - Received message: updated clock to 343. Queue length: 23
+1741028532.018 - Received message: updated clock to 348. Queue length: 23
+1741028532.124 - Received message: updated clock to 357. Queue length: 23
+1741028532.229 - Received message: updated clock to 359. Queue length: 24
+1741028532.331 - Received message: updated clock to 365. Queue length: 24
+1741028532.435 - Received message: updated clock to 368. Queue length: 23
+1741028532.540 - Received message: updated clock to 372. Queue length: 23
+1741028532.645 - Received message: updated clock to 377. Queue length: 22
+1741028532.747 - Received message: updated clock to 380. Queue length: 23
+1741028532.851 - Received message: updated clock to 386. Queue length: 22
+1741028532.955 - Received message: updated clock to 392. Queue length: 22
+1741028533.060 - Received message: updated clock to 398. Queue length: 22
+1741028533.164 - Received message: updated clock to 400. Queue length: 21
+1741028533.267 - Received message: updated clock to 417. Queue length: 23
+1741028533.372 - Received message: updated clock to 419. Queue length: 24
+1741028533.473 - Received message: updated clock to 421. Queue length: 25
+1741028533.578 - Received message: updated clock to 424. Queue length: 26
+1741028533.682 - Received message: updated clock to 435. Queue length: 26
+1741028533.782 - Received message: updated clock to 436. Queue length: 26
+1741028533.888 - Received message: updated clock to 445. Queue length: 30
+1741028533.989 - Received message: updated clock to 447. Queue length: 29
+1741028534.094 - Received message: updated clock to 453. Queue length: 32
+1741028534.199 - Received message: updated clock to 455. Queue length: 33
+1741028534.301 - Received message: updated clock to 465. Queue length: 34
+1741028534.406 - Received message: updated clock to 473. Queue length: 37
+1741028534.510 - Received message: updated clock to 479. Queue length: 38
+1741028534.614 - Received message: updated clock to 486. Queue length: 39
+1741028534.717 - Received message: updated clock to 490. Queue length: 39
+1741028534.819 - Received message: updated clock to 497. Queue length: 41
+1741028534.924 - Received message: updated clock to 512. Queue length: 44
+1741028535.025 - Received message: updated clock to 530. Queue length: 43
+1741028535.130 - Received message: updated clock to 535. Queue length: 43
+1741028535.235 - Received message: updated clock to 553. Queue length: 44
+1741028535.340 - Received message: updated clock to 558. Queue length: 43
+1741028535.445 - Received message: updated clock to 575. Queue length: 43
+1741028535.547 - Received message: updated clock to 576. Queue length: 44
+1741028535.652 - Received message: updated clock to 578. Queue length: 46
+1741028535.755 - Received message: updated clock to 585. Queue length: 46
+1741028535.860 - Received message: updated clock to 587. Queue length: 47
+1741028535.966 - Received message: updated clock to 592. Queue length: 46
+1741028536.071 - Received message: updated clock to 594. Queue length: 47
+1741028536.174 - Received message: updated clock to 598. Queue length: 48
+1741028536.277 - Received message: updated clock to 605. Queue length: 48
+1741028536.382 - Received message: updated clock to 615. Queue length: 48
+1741028536.487 - Received message: updated clock to 619. Queue length: 48
+1741028536.588 - Received message: updated clock to 626. Queue length: 49
+1741028536.694 - Received message: updated clock to 628. Queue length: 49
+1741028536.797 - Received message: updated clock to 631. Queue length: 49
+1741028536.900 - Received message: updated clock to 632. Queue length: 49
+1741028537.001 - Received message: updated clock to 634. Queue length: 48
+1741028537.105 - Received message: updated clock to 644. Queue length: 50
+1741028537.208 - Received message: updated clock to 646. Queue length: 50
+1741028537.313 - Received message: updated clock to 648. Queue length: 51
+1741028537.415 - Received message: updated clock to 653. Queue length: 51
+1741028537.517 - Received message: updated clock to 655. Queue length: 53
+1741028537.622 - Received message: updated clock to 661. Queue length: 53
+1741028537.727 - Received message: updated clock to 665. Queue length: 52
+1741028537.831 - Received message: updated clock to 671. Queue length: 53
+1741028537.936 - Received message: updated clock to 675. Queue length: 56
+1741028538.041 - Received message: updated clock to 677. Queue length: 57
+1741028538.143 - Received message: updated clock to 679. Queue length: 57
+1741028538.247 - Received message: updated clock to 684. Queue length: 57
+1741028538.353 - Received message: updated clock to 689. Queue length: 58
+1741028538.454 - Received message: updated clock to 692. Queue length: 57
+1741028538.559 - Received message: updated clock to 696. Queue length: 57
+1741028538.663 - Received message: updated clock to 701. Queue length: 57
+1741028538.763 - Received message: updated clock to 710. Queue length: 57
+1741028538.868 - Received message: updated clock to 718. Queue length: 58
+1741028538.974 - Received message: updated clock to 721. Queue length: 59
+1741028539.079 - Received message: updated clock to 722. Queue length: 61
+1741028539.181 - Received message: updated clock to 729. Queue length: 64
+1741028539.282 - Received message: updated clock to 730. Queue length: 64
+1741028539.387 - Received message: updated clock to 732. Queue length: 64
+1741028539.489 - Received message: updated clock to 734. Queue length: 64
+1741028539.590 - Received message: updated clock to 749. Queue length: 63
+1741028539.695 - Received message: updated clock to 758. Queue length: 64
+1741028539.796 - Received message: updated clock to 761. Queue length: 64
+1741028539.901 - Received message: updated clock to 772. Queue length: 64
+1741028540.005 - Received message: updated clock to 781. Queue length: 64
+1741028540.107 - Received message: updated clock to 784. Queue length: 65
+1741028540.212 - Received message: updated clock to 788. Queue length: 70
+1741028540.314 - Received message: updated clock to 790. Queue length: 70
+1741028540.416 - Received message: updated clock to 792. Queue length: 70
+1741028540.521 - Received message: updated clock to 799. Queue length: 69
+1741028540.623 - Received message: updated clock to 806. Queue length: 70
+1741028540.728 - Received message: updated clock to 812. Queue length: 71
+1741028540.830 - Received message: updated clock to 825. Queue length: 70
+1741028540.935 - Received message: updated clock to 830. Queue length: 70
+1741028541.040 - Received message: updated clock to 836. Queue length: 71
+1741028541.143 - Received message: updated clock to 841. Queue length: 73
+1741028541.248 - Received message: updated clock to 846. Queue length: 73
+1741028541.354 - Received message: updated clock to 857. Queue length: 74
+1741028541.454 - Received message: updated clock to 868. Queue length: 75
+1741028541.560 - Received message: updated clock to 872. Queue length: 77
+1741028541.664 - Received message: updated clock to 875. Queue length: 79
+1741028541.769 - Received message: updated clock to 880. Queue length: 82
+1741028541.874 - Received message: updated clock to 890. Queue length: 82
+1741028541.979 - Received message: updated clock to 898. Queue length: 86
+1741028542.081 - Received message: updated clock to 912. Queue length: 87
+1741028542.186 - Received message: updated clock to 919. Queue length: 90
+1741028542.291 - Received message: updated clock to 920. Queue length: 91
+1741028542.396 - Received message: updated clock to 923. Queue length: 93
+1741028542.497 - Received message: updated clock to 932. Queue length: 95
+1741028542.602 - Received message: updated clock to 939. Queue length: 95
+1741028542.708 - Received message: updated clock to 943. Queue length: 96
+1741028542.813 - Received message: updated clock to 950. Queue length: 96
+1741028542.918 - Received message: updated clock to 954. Queue length: 96
+1741028543.023 - Received message: updated clock to 958. Queue length: 100
+1741028543.129 - Received message: updated clock to 965. Queue length: 101
+1741028543.232 - Received message: updated clock to 981. Queue length: 102
+1741028543.338 - Received message: updated clock to 986. Queue length: 102
+1741028543.443 - Received message: updated clock to 988. Queue length: 102
+1741028543.545 - Received message: updated clock to 991. Queue length: 104
+1741028543.651 - Received message: updated clock to 994. Queue length: 104
+1741028543.752 - Received message: updated clock to 998. Queue length: 105
+1741028543.853 - Received message: updated clock to 1000. Queue length: 106
+1741028543.958 - Received message: updated clock to 1004. Queue length: 107
+1741028544.063 - Received message: updated clock to 1014. Queue length: 108
+1741028544.167 - Received message: updated clock to 1019. Queue length: 107
+1741028544.270 - Received message: updated clock to 1025. Queue length: 107
+1741028544.375 - Received message: updated clock to 1032. Queue length: 108
+1741028544.477 - Received message: updated clock to 1045. Queue length: 109
+1741028544.581 - Received message: updated clock to 1057. Queue length: 110
+1741028544.682 - Received message: updated clock to 1063. Queue length: 109
+1741028544.787 - Received message: updated clock to 1071. Queue length: 109
+1741028544.893 - Received message: updated clock to 1074. Queue length: 112
+1741028544.997 - Received message: updated clock to 1077. Queue length: 115
+1741028545.102 - Received message: updated clock to 1081. Queue length: 114
+1741028545.208 - Received message: updated clock to 1089. Queue length: 115
+1741028545.308 - Received message: updated clock to 1091. Queue length: 117
+1741028545.411 - Received message: updated clock to 1095. Queue length: 116
+1741028545.516 - Received message: updated clock to 1101. Queue length: 116
+1741028545.621 - Received message: updated clock to 1104. Queue length: 115
+1741028545.727 - Received message: updated clock to 1106. Queue length: 114
+1741028545.831 - Received message: updated clock to 1109. Queue length: 116
+1741028545.936 - Received message: updated clock to 1116. Queue length: 116
+1741028546.041 - Received message: updated clock to 1123. Queue length: 115
+1741028546.146 - Received message: updated clock to 1132. Queue length: 117
+1741028546.250 - Received message: updated clock to 1146. Queue length: 116
+1741028546.353 - Received message: updated clock to 1150. Queue length: 117
+1741028546.458 - Received message: updated clock to 1157. Queue length: 116
+1741028546.563 - Received message: updated clock to 1167. Queue length: 115
+1741028546.668 - Received message: updated clock to 1175. Queue length: 116
+1741028546.773 - Received message: updated clock to 1187. Queue length: 116
+1741028546.875 - Received message: updated clock to 1189. Queue length: 116
+1741028546.980 - Received message: updated clock to 1191. Queue length: 116
+1741028547.085 - Received message: updated clock to 1192. Queue length: 115
+1741028547.189 - Received message: updated clock to 1193. Queue length: 114
+1741028547.294 - Received message: updated clock to 1195. Queue length: 114
+1741028547.397 - Received message: updated clock to 1198. Queue length: 116
+1741028547.498 - Received message: updated clock to 1199. Queue length: 116
+1741028547.600 - Received message: updated clock to 1206. Queue length: 116
+1741028547.704 - Received message: updated clock to 1212. Queue length: 116
+1741028547.809 - Received message: updated clock to 1232. Queue length: 116
+1741028547.914 - Received message: updated clock to 1234. Queue length: 116
+1741028548.015 - Received message: updated clock to 1238. Queue length: 115
+1741028548.120 - Received message: updated clock to 1241. Queue length: 117
+1741028548.224 - Received message: updated clock to 1255. Queue length: 116
+1741028548.328 - Received message: updated clock to 1263. Queue length: 117
+1741028548.433 - Received message: updated clock to 1270. Queue length: 116
+1741028548.536 - Received message: updated clock to 1273. Queue length: 116
+1741028548.641 - Received message: updated clock to 1279. Queue length: 116
+1741028548.746 - Received message: updated clock to 1282. Queue length: 115
+1741028548.851 - Received message: updated clock to 1284. Queue length: 116
+1741028548.955 - Received message: updated clock to 1294. Queue length: 116
+1741028549.057 - Received message: updated clock to 1299. Queue length: 116
+1741028549.162 - Received message: updated clock to 1308. Queue length: 119
+1741028549.264 - Received message: updated clock to 1310. Queue length: 120
+1741028549.366 - Received message: updated clock to 1314. Queue length: 121
+1741028549.467 - Received message: updated clock to 1317. Queue length: 121
+1741028549.572 - Received message: updated clock to 1318. Queue length: 120
+1741028549.676 - Received message: updated clock to 1327. Queue length: 120
+1741028549.780 - Received message: updated clock to 1329. Queue length: 120
+1741028549.882 - Received message: updated clock to 1331. Queue length: 119
+1741028549.987 - Received message: updated clock to 1332. Queue length: 119
+1741028550.090 - Received message: updated clock to 1334. Queue length: 120
+1741028550.195 - Received message: updated clock to 1338. Queue length: 122
+1741028550.297 - Received message: updated clock to 1340. Queue length: 121
+1741028550.403 - Received message: updated clock to 1341. Queue length: 121
+1741028550.505 - Received message: updated clock to 1350. Queue length: 122
+1741028550.608 - Received message: updated clock to 1351. Queue length: 123
+1741028550.713 - Received message: updated clock to 1354. Queue length: 124
+1741028550.818 - Received message: updated clock to 1355. Queue length: 124
+1741028550.921 - Received message: updated clock to 1357. Queue length: 124
+1741028551.024 - Received message: updated clock to 1363. Queue length: 123
+1741028551.128 - Received message: updated clock to 1365. Queue length: 125
+1741028551.230 - Received message: updated clock to 1372. Queue length: 125
+1741028551.331 - Received message: updated clock to 1374. Queue length: 126
+1741028551.431 - Received message: updated clock to 1376. Queue length: 126
+1741028551.534 - Received message: updated clock to 1379. Queue length: 127
+1741028551.639 - Received message: updated clock to 1386. Queue length: 128
+1741028551.744 - Received message: updated clock to 1390. Queue length: 128
+1741028551.847 - Received message: updated clock to 1395. Queue length: 130
+1741028551.949 - Received message: updated clock to 1397. Queue length: 130
+1741028552.055 - Received message: updated clock to 1401. Queue length: 131
+1741028552.159 - Received message: updated clock to 1404. Queue length: 131
+1741028552.264 - Received message: updated clock to 1405. Queue length: 132
+1741028552.369 - Received message: updated clock to 1410. Queue length: 133
+1741028552.471 - Received message: updated clock to 1413. Queue length: 133
+1741028552.574 - Received message: updated clock to 1425. Queue length: 135
+1741028552.679 - Received message: updated clock to 1427. Queue length: 136
+1741028552.781 - Received message: updated clock to 1431. Queue length: 135
+1741028552.882 - Received message: updated clock to 1447. Queue length: 136
+1741028552.987 - Received message: updated clock to 1450. Queue length: 136
+1741028553.088 - Received message: updated clock to 1451. Queue length: 138
+1741028553.193 - Received message: updated clock to 1453. Queue length: 139
+1741028553.297 - Received message: updated clock to 1455. Queue length: 139
+1741028553.403 - Received message: updated clock to 1457. Queue length: 142
+1741028553.508 - Received message: updated clock to 1463. Queue length: 144
+1741028553.613 - Received message: updated clock to 1465. Queue length: 144
+1741028553.718 - Received message: updated clock to 1474. Queue length: 145
+1741028553.822 - Received message: updated clock to 1475. Queue length: 145
+1741028553.925 - Received message: updated clock to 1482. Queue length: 147
+1741028554.027 - Received message: updated clock to 1492. Queue length: 146
+1741028554.132 - Received message: updated clock to 1495. Queue length: 145
+1741028554.237 - Received message: updated clock to 1497. Queue length: 146
+1741028554.338 - Received message: updated clock to 1502. Queue length: 146
+1741028554.438 - Received message: updated clock to 1512. Queue length: 147
+1741028554.539 - Received message: updated clock to 1513. Queue length: 148
+1741028554.644 - Received message: updated clock to 1521. Queue length: 148
+1741028554.747 - Received message: updated clock to 1525. Queue length: 147
+1741028554.851 - Received message: updated clock to 1530. Queue length: 148
+1741028554.956 - Received message: updated clock to 1535. Queue length: 147
+1741028555.061 - Received message: updated clock to 1536. Queue length: 149
+1741028555.166 - Received message: updated clock to 1540. Queue length: 148
+1741028555.271 - Received message: updated clock to 1541. Queue length: 148
+1741028555.371 - Received message: updated clock to 1565. Queue length: 148
+1741028555.477 - Received message: updated clock to 1569. Queue length: 150
+1741028555.578 - Received message: updated clock to 1574. Queue length: 151
+1741028555.683 - Received message: updated clock to 1581. Queue length: 151
+1741028555.788 - Received message: updated clock to 1584. Queue length: 153
+1741028555.893 - Received message: updated clock to 1588. Queue length: 155
+1741028555.998 - Received message: updated clock to 1590. Queue length: 155
+1741028556.103 - Received message: updated clock to 1608. Queue length: 158
+1741028556.208 - Received message: updated clock to 1613. Queue length: 157
+1741028556.308 - Received message: updated clock to 1615. Queue length: 157
+1741028556.413 - Received message: updated clock to 1618. Queue length: 156
+1741028556.514 - Received message: updated clock to 1622. Queue length: 157
+1741028556.616 - Received message: updated clock to 1625. Queue length: 159
+1741028556.717 - Received message: updated clock to 1629. Queue length: 159
+1741028556.822 - Received message: updated clock to 1631. Queue length: 158
+1741028556.922 - Received message: updated clock to 1632. Queue length: 157
+1741028557.024 - Received message: updated clock to 1644. Queue length: 157
+1741028557.126 - Received message: updated clock to 1649. Queue length: 157
+1741028557.231 - Received message: updated clock to 1651. Queue length: 159
+1741028557.336 - Received message: updated clock to 1653. Queue length: 160
+1741028557.439 - Received message: updated clock to 1659. Queue length: 161
+1741028557.539 - Received message: updated clock to 1674. Queue length: 162
+1741028557.645 - Received message: updated clock to 1696. Queue length: 162
+1741028557.750 - Received message: updated clock to 1697. Queue length: 161
+1741028557.855 - Received message: updated clock to 1699. Queue length: 162
+1741028557.955 - Received message: updated clock to 1709. Queue length: 162
+1741028558.058 - Received message: updated clock to 1724. Queue length: 163
+1741028558.160 - Received message: updated clock to 1726. Queue length: 166
+1741028558.264 - Received message: updated clock to 1729. Queue length: 167
+1741028558.369 - Received message: updated clock to 1747. Queue length: 167
+1741028558.472 - Received message: updated clock to 1750. Queue length: 169
+1741028558.577 - Received message: updated clock to 1775. Queue length: 170
+1741028558.680 - Received message: updated clock to 1777. Queue length: 171
+1741028558.782 - Received message: updated clock to 1787. Queue length: 171
+1741028558.887 - Received message: updated clock to 1790. Queue length: 174
+1741028558.992 - Received message: updated clock to 1802. Queue length: 173
+1741028559.098 - Received message: updated clock to 1826. Queue length: 174
+1741028559.204 - Received message: updated clock to 1832. Queue length: 174
+1741028559.307 - Received message: updated clock to 1833. Queue length: 174
+1741028559.412 - Received message: updated clock to 1838. Queue length: 177
+1741028559.513 - Received message: updated clock to 1848. Queue length: 178
+1741028559.617 - Received message: updated clock to 1855. Queue length: 179
+1741028559.722 - Received message: updated clock to 1861. Queue length: 178
+1741028559.827 - Received message: updated clock to 1871. Queue length: 178
+1741028559.933 - Received message: updated clock to 1878. Queue length: 179
+1741028560.038 - Received message: updated clock to 1894. Queue length: 180
+1741028560.141 - Received message: updated clock to 1895. Queue length: 179
+1741028560.246 - Received message: updated clock to 1897. Queue length: 180
+1741028560.349 - Received message: updated clock to 1914. Queue length: 179
+1741028560.455 - Received message: updated clock to 1921. Queue length: 181
+1741028560.560 - Received message: updated clock to 1934. Queue length: 184
+1741028560.664 - Received message: updated clock to 1941. Queue length: 186
+1741028560.768 - Received message: updated clock to 1958. Queue length: 185
+1741028560.874 - Received message: updated clock to 1960. Queue length: 186
+1741028560.976 - Received message: updated clock to 1970. Queue length: 190
+1741028561.081 - Received message: updated clock to 1977. Queue length: 189
+1741028561.186 - Received message: updated clock to 1983. Queue length: 190
+1741028561.290 - Received message: updated clock to 1985. Queue length: 190
+1741028561.395 - Received message: updated clock to 1987. Queue length: 193
+1741028561.498 - Received message: updated clock to 1990. Queue length: 193
+1741028561.604 - Received message: updated clock to 1994. Queue length: 194
+1741028561.707 - Received message: updated clock to 2001. Queue length: 193
+1741028561.812 - Received message: updated clock to 2004. Queue length: 193
+1741028561.914 - Received message: updated clock to 2010. Queue length: 194
+1741028562.019 - Received message: updated clock to 2015. Queue length: 193
+1741028562.125 - Received message: updated clock to 2031. Queue length: 194
+1741028562.230 - Received message: updated clock to 2048. Queue length: 195
+1741028562.335 - Received message: updated clock to 2059. Queue length: 197
+1741028562.436 - Received message: updated clock to 2068. Queue length: 199
+1741028562.541 - Received message: updated clock to 2071. Queue length: 201
+1741028562.647 - Received message: updated clock to 2077. Queue length: 200
+1741028562.750 - Received message: updated clock to 2079. Queue length: 201
+1741028562.855 - Received message: updated clock to 2081. Queue length: 202
+1741028562.957 - Received message: updated clock to 2094. Queue length: 203
+1741028563.059 - Received message: updated clock to 2109. Queue length: 204
+1741028563.164 - Received message: updated clock to 2111. Queue length: 205
+1741028563.265 - Received message: updated clock to 2114. Queue length: 206
+1741028563.366 - Received message: updated clock to 2121. Queue length: 205
+1741028563.468 - Received message: updated clock to 2127. Queue length: 205
+1741028563.572 - Received message: updated clock to 2128. Queue length: 206
+1741028563.674 - Received message: updated clock to 2134. Queue length: 205
+1741028563.777 - Received message: updated clock to 2146. Queue length: 205
+1741028563.882 - Received message: updated clock to 2157. Queue length: 206
+1741028563.987 - Received message: updated clock to 2162. Queue length: 205
+1741028564.091 - Received message: updated clock to 2163. Queue length: 206
+1741028564.192 - Received message: updated clock to 2174. Queue length: 206
+1741028564.297 - Received message: updated clock to 2177. Queue length: 210
+1741028564.403 - Received message: updated clock to 2179. Queue length: 210
+1741028564.508 - Received message: updated clock to 2190. Queue length: 210
+1741028564.613 - Received message: updated clock to 2193. Queue length: 210
+1741028564.714 - Received message: updated clock to 2198. Queue length: 211
+1741028564.819 - Received message: updated clock to 2203. Queue length: 211
+1741028564.924 - Received message: updated clock to 2210. Queue length: 213
+1741028565.027 - Received message: updated clock to 2218. Queue length: 215
+1741028565.132 - Received message: updated clock to 2224. Queue length: 215
+1741028565.233 - Received message: updated clock to 2226. Queue length: 217
+1741028565.335 - Received message: updated clock to 2231. Queue length: 218
+1741028565.439 - Received message: updated clock to 2236. Queue length: 219
+1741028565.545 - Received message: updated clock to 2242. Queue length: 220
+1741028565.648 - Received message: updated clock to 2247. Queue length: 222
+1741028565.753 - Received message: updated clock to 2252. Queue length: 224
+1741028565.857 - Received message: updated clock to 2259. Queue length: 225
+1741028565.961 - Received message: updated clock to 2262. Queue length: 225
+1741028566.062 - Received message: updated clock to 2272. Queue length: 225
+1741028566.167 - Received message: updated clock to 2277. Queue length: 226
+1741028566.271 - Received message: updated clock to 2282. Queue length: 227
+1741028566.373 - Received message: updated clock to 2288. Queue length: 226
+1741028566.479 - Received message: updated clock to 2289. Queue length: 226
+1741028566.582 - Received message: updated clock to 2292. Queue length: 227
+1741028566.683 - Received message: updated clock to 2302. Queue length: 231
+1741028566.788 - Received message: updated clock to 2303. Queue length: 233
+1741028566.893 - Received message: updated clock to 2314. Queue length: 233
+1741028566.998 - Received message: updated clock to 2315. Queue length: 234
+1741028567.101 - Received message: updated clock to 2325. Queue length: 233
+1741028567.206 - Received message: updated clock to 2332. Queue length: 236
+1741028567.311 - Received message: updated clock to 2334. Queue length: 236
+1741028567.414 - Received message: updated clock to 2340. Queue length: 237
+1741028567.519 - Received message: updated clock to 2345. Queue length: 238
+1741028567.620 - Received message: updated clock to 2347. Queue length: 239
+1741028567.725 - Received message: updated clock to 2350. Queue length: 239
+1741028567.827 - Received message: updated clock to 2359. Queue length: 240
+1741028567.932 - Received message: updated clock to 2365. Queue length: 240
+1741028568.032 - Received message: updated clock to 2366. Queue length: 241
+1741028568.136 - Received message: updated clock to 2368. Queue length: 241
+1741028568.240 - Received message: updated clock to 2372. Queue length: 241
+1741028568.341 - Received message: updated clock to 2373. Queue length: 241
+1741028568.443 - Received message: updated clock to 2378. Queue length: 243
+1741028568.546 - Received message: updated clock to 2380. Queue length: 244
+1741028568.647 - Received message: updated clock to 2390. Queue length: 244
+1741028568.752 - Received message: updated clock to 2397. Queue length: 245
+1741028568.854 - Received message: updated clock to 2403. Queue length: 244
+1741028568.958 - Received message: updated clock to 2408. Queue length: 244
+1741028569.060 - Received message: updated clock to 2411. Queue length: 252
+1741028569.164 - Received message: updated clock to 2413. Queue length: 254
+1741028569.269 - Received message: updated clock to 2436. Queue length: 254
+1741028569.375 - Received message: updated clock to 2442. Queue length: 254
+1741028569.480 - Received message: updated clock to 2445. Queue length: 255
+1741028569.581 - Received message: updated clock to 2456. Queue length: 255
+1741028569.684 - Received message: updated clock to 2458. Queue length: 256
+1741028569.787 - Received message: updated clock to 2461. Queue length: 257
+1741028569.892 - Received message: updated clock to 2464. Queue length: 256
+1741028569.997 - Received message: updated clock to 2476. Queue length: 257
+1741028570.100 - Received message: updated clock to 2491. Queue length: 259
+1741028570.204 - Received message: updated clock to 2494. Queue length: 260
+1741028570.306 - Received message: updated clock to 2505. Queue length: 262
+1741028570.410 - Received message: updated clock to 2507. Queue length: 261
+1741028570.513 - Received message: updated clock to 2513. Queue length: 262
+1741028570.614 - Received message: updated clock to 2531. Queue length: 266
+1741028570.717 - Received message: updated clock to 2537. Queue length: 267
+1741028570.819 - Received message: updated clock to 2545. Queue length: 269
+1741028570.921 - Received message: updated clock to 2547. Queue length: 270
+1741028571.022 - Received message: updated clock to 2549. Queue length: 271
+1741028571.126 - Received message: updated clock to 2555. Queue length: 271
+1741028571.230 - Received message: updated clock to 2558. Queue length: 272
+1741028571.332 - Received message: updated clock to 2567. Queue length: 272
+1741028571.437 - Received message: updated clock to 2571. Queue length: 273
+1741028571.542 - Received message: updated clock to 2574. Queue length: 275
+1741028571.648 - Received message: updated clock to 2576. Queue length: 275
+1741028571.750 - Received message: updated clock to 2579. Queue length: 277
+1741028571.855 - Received message: updated clock to 2583. Queue length: 277
+1741028571.960 - Received message: updated clock to 2585. Queue length: 280
+1741028572.065 - Received message: updated clock to 2596. Queue length: 282
+1741028572.168 - Received message: updated clock to 2599. Queue length: 281
+1741028572.272 - Received message: updated clock to 2603. Queue length: 280
+1741028572.372 - Received message: updated clock to 2605. Queue length: 281
+1741028572.477 - Received message: updated clock to 2608. Queue length: 282
+1741028572.580 - Received message: updated clock to 2618. Queue length: 283
+1741028572.680 - Received message: updated clock to 2637. Queue length: 284
+1741028572.786 - Received message: updated clock to 2640. Queue length: 286
+1741028572.889 - Received message: updated clock to 2644. Queue length: 285
+1741028572.990 - Received message: updated clock to 2648. Queue length: 288
+1741028573.095 - Received message: updated clock to 2652. Queue length: 289
+1741028573.198 - Received message: updated clock to 2659. Queue length: 289
+1741028573.302 - Received message: updated clock to 2684. Queue length: 288
+1741028573.407 - Received message: updated clock to 2689. Queue length: 289
+1741028573.510 - Received message: updated clock to 2698. Queue length: 292
+1741028573.615 - Received message: updated clock to 2699. Queue length: 292
+1741028573.720 - Received message: updated clock to 2704. Queue length: 291
+1741028573.822 - Received message: updated clock to 2712. Queue length: 290
+1741028573.927 - Received message: updated clock to 2714. Queue length: 291
+1741028574.030 - Received message: updated clock to 2721. Queue length: 295
+1741028574.131 - Received message: updated clock to 2724. Queue length: 296
+1741028574.232 - Received message: updated clock to 2726. Queue length: 295
+1741028574.334 - Received message: updated clock to 2733. Queue length: 295
+1741028574.438 - Received message: updated clock to 2741. Queue length: 297
+1741028574.539 - Received message: updated clock to 2753. Queue length: 296
+1741028574.642 - Received message: updated clock to 2756. Queue length: 296
+1741028574.746 - Received message: updated clock to 2766. Queue length: 298
+1741028574.848 - Received message: updated clock to 2772. Queue length: 298
+1741028574.952 - Received message: updated clock to 2779. Queue length: 298
+1741028575.057 - Received message: updated clock to 2783. Queue length: 298
+1741028575.161 - Received message: updated clock to 2784. Queue length: 300
+1741028575.264 - Received message: updated clock to 2786. Queue length: 302
+1741028575.367 - Received message: updated clock to 2790. Queue length: 303
+1741028575.473 - Received message: updated clock to 2796. Queue length: 303
+1741028575.575 - Received message: updated clock to 2798. Queue length: 302
+1741028575.680 - Received message: updated clock to 2803. Queue length: 303
+1741028575.782 - Received message: updated clock to 2814. Queue length: 303
+1741028575.884 - Received message: updated clock to 2818. Queue length: 305
+1741028575.989 - Received message: updated clock to 2820. Queue length: 307
+1741028576.093 - Received message: updated clock to 2828. Queue length: 308
+1741028576.197 - Received message: updated clock to 2830. Queue length: 308
+1741028576.298 - Received message: updated clock to 2836. Queue length: 307
+1741028576.403 - Received message: updated clock to 2838. Queue length: 309
+1741028576.508 - Received message: updated clock to 2845. Queue length: 312
+1741028576.613 - Received message: updated clock to 2851. Queue length: 316
+1741028576.718 - Received message: updated clock to 2856. Queue length: 315
+1741028576.823 - Received message: updated clock to 2857. Queue length: 317
+1741028576.925 - Received message: updated clock to 2859. Queue length: 317
+1741028577.025 - Received message: updated clock to 2870. Queue length: 317
+1741028577.130 - Received message: updated clock to 2872. Queue length: 317
+1741028577.232 - Received message: updated clock to 2887. Queue length: 317
+1741028577.334 - Received message: updated clock to 2895. Queue length: 318
+1741028577.439 - Received message: updated clock to 2899. Queue length: 317
+1741028577.544 - Received message: updated clock to 2901. Queue length: 318
+1741028577.649 - Received message: updated clock to 2903. Queue length: 319
+1741028577.750 - Received message: updated clock to 2904. Queue length: 324
+1741028577.855 - Received message: updated clock to 2909. Queue length: 326
+1741028577.959 - Received message: updated clock to 2912. Queue length: 328
+1741028578.060 - Received message: updated clock to 2920. Queue length: 330
+1741028578.164 - Received message: updated clock to 2923. Queue length: 329
+1741028578.266 - Received message: updated clock to 2939. Queue length: 329
+1741028578.371 - Received message: updated clock to 2952. Queue length: 329
+1741028578.474 - Received message: updated clock to 2953. Queue length: 330
+1741028578.579 - Received message: updated clock to 2954. Queue length: 332
+1741028578.684 - Received message: updated clock to 2955. Queue length: 333
+1741028578.789 - Received message: updated clock to 2972. Queue length: 333
+1741028578.891 - Received message: updated clock to 2977. Queue length: 334
+1741028578.996 - Received message: updated clock to 2990. Queue length: 334
+1741028579.098 - Received message: updated clock to 2992. Queue length: 335
+1741028579.203 - Received message: updated clock to 2996. Queue length: 337
+1741028579.304 - Received message: updated clock to 3001. Queue length: 339
+1741028579.409 - Received message: updated clock to 3002. Queue length: 339
+1741028579.514 - Received message: updated clock to 3004. Queue length: 339
+1741028579.615 - Received message: updated clock to 3009. Queue length: 338
+1741028579.716 - Received message: updated clock to 3012. Queue length: 338
+1741028579.821 - Received message: updated clock to 3013. Queue length: 340
+1741028579.924 - Received message: updated clock to 3019. Queue length: 339
+1741028580.027 - Received message: updated clock to 3028. Queue length: 338
+1741028580.131 - Received message: updated clock to 3035. Queue length: 337
+1741028580.232 - Received message: updated clock to 3038. Queue length: 337
+1741028580.337 - Received message: updated clock to 3042. Queue length: 339
+1741028580.442 - Received message: updated clock to 3043. Queue length: 342
+1741028580.547 - Received message: updated clock to 3044. Queue length: 343
+1741028580.653 - Received message: updated clock to 3047. Queue length: 345
+1741028580.753 - Received message: updated clock to 3062. Queue length: 344
+1741028580.858 - Received message: updated clock to 3064. Queue length: 344
+1741028580.963 - Received message: updated clock to 3065. Queue length: 344
+1741028581.066 - Received message: updated clock to 3075. Queue length: 345
+1741028581.171 - Received message: updated clock to 3078. Queue length: 345
+1741028581.276 - Received message: updated clock to 3081. Queue length: 346
+1741028581.381 - Received message: updated clock to 3083. Queue length: 347
+1741028581.483 - Received message: updated clock to 3091. Queue length: 348
+1741028581.589 - Received message: updated clock to 3098. Queue length: 349
+1741028581.694 - Received message: updated clock to 3102. Queue length: 349
+1741028581.799 - Received message: updated clock to 3118. Queue length: 349
+1741028581.902 - Received message: updated clock to 3120. Queue length: 350
+1741028582.005 - Received message: updated clock to 3128. Queue length: 350
+1741028582.109 - Received message: updated clock to 3139. Queue length: 351
+1741028582.213 - Received message: updated clock to 3146. Queue length: 351
+1741028582.318 - Received message: updated clock to 3150. Queue length: 351
+1741028582.419 - Received message: updated clock to 3154. Queue length: 351
+1741028582.524 - Received message: updated clock to 3159. Queue length: 354
+1741028582.629 - Received message: updated clock to 3162. Queue length: 355
+1741028582.733 - Received message: updated clock to 3165. Queue length: 354
+1741028582.838 - Received message: updated clock to 3168. Queue length: 354
+1741028582.943 - Received message: updated clock to 3169. Queue length: 354
+1741028583.046 - Received message: updated clock to 3174. Queue length: 355
+1741028583.149 - Received message: updated clock to 3178. Queue length: 355
+1741028583.254 - Received message: updated clock to 3183. Queue length: 354
+1741028583.359 - Received message: updated clock to 3187. Queue length: 357
+1741028583.463 - Received message: updated clock to 3198. Queue length: 358
+1741028583.565 - Received message: updated clock to 3201. Queue length: 357
+1741028583.667 - Received message: updated clock to 3206. Queue length: 358
+1741028583.773 - Received message: updated clock to 3212. Queue length: 359
+1741028583.878 - Received message: updated clock to 3220. Queue length: 359
+1741028583.981 - Received message: updated clock to 3222. Queue length: 358
+1741028584.086 - Received message: updated clock to 3228. Queue length: 358
+1741028584.187 - Received message: updated clock to 3231. Queue length: 360
+1741028584.288 - Received message: updated clock to 3238. Queue length: 360
+1741028584.391 - Received message: updated clock to 3240. Queue length: 362
+1741028584.493 - Received message: updated clock to 3246. Queue length: 361
+1741028584.598 - Received message: updated clock to 3248. Queue length: 362
+1741028584.703 - Received message: updated clock to 3267. Queue length: 362
+1741028584.805 - Received message: updated clock to 3273. Queue length: 361
+1741028584.909 - Received message: updated clock to 3275. Queue length: 362
+1741028585.014 - Received message: updated clock to 3296. Queue length: 362
+1741028585.117 - Received message: updated clock to 3297. Queue length: 364
+1741028585.221 - Received message: updated clock to 3299. Queue length: 364
+1741028585.322 - Received message: updated clock to 3315. Queue length: 364
+1741028585.424 - Received message: updated clock to 3319. Queue length: 365
+1741028585.529 - Received message: updated clock to 3323. Queue length: 366
+1741028585.634 - Received message: updated clock to 3333. Queue length: 366
+1741028585.739 - Received message: updated clock to 3335. Queue length: 366
+1741028585.844 - Received message: updated clock to 3337. Queue length: 368
+1741028585.947 - Received message: updated clock to 3339. Queue length: 368
+1741028586.048 - Received message: updated clock to 3341. Queue length: 368
+1741028586.153 - Received message: updated clock to 3343. Queue length: 368
+1741028586.258 - Received message: updated clock to 3359. Queue length: 369
+1741028586.362 - Received message: updated clock to 3363. Queue length: 370
+1741028586.467 - Received message: updated clock to 3372. Queue length: 370
+1741028586.572 - Received message: updated clock to 3376. Queue length: 370
+1741028586.675 - Received message: updated clock to 3382. Queue length: 369
+1741028586.780 - Received message: updated clock to 3390. Queue length: 370
+1741028586.882 - Received message: updated clock to 3394. Queue length: 371
