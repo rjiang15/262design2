@@ -15,7 +15,7 @@ class VirtualMachine:
         
         Args:
             vm_id (int): Unique identifier.
-            tick_rate (int, optional): If provided, this tick rate is used.
+            tick_rate (float, optional): If provided, this tick rate is used.
             tick_min (int): Minimum tick rate.
             tick_max (int): Maximum tick rate.
             send_threshold (int): If a random event's value is <= this, send messages.
@@ -49,9 +49,9 @@ class VirtualMachine:
             if sock:
                 self.peer_sockets[peer.vm_id] = sock
 
-    def start_network(self):
-        """Start network listener."""
-        start_server(self)
+    def start_network(self, host="127.0.0.1", base_port=5000):
+        """Start network listener with given host and base port."""
+        start_server(self, host=host, base_port=base_port)
 
     def log_event(self, event_str):
         timestamp = time.time()
@@ -136,6 +136,6 @@ if __name__ == "__main__":
     # Simple network test for a single VM.
     vm = VirtualMachine(vm_id=1)
     vm.set_peers([])
-    vm.start_network()
+    vm.start_network()  # Will use default host and base_port.
     print(f"VM {vm.vm_id} initialized with tick rate: {vm.tick_rate} ticks per second.")
     vm.run_tick()
