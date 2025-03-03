@@ -1,9 +1,16 @@
 # src/main.py
 
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import time
 import threading
 import argparse
 from virtual_machine import VirtualMachine
+
+# Import the archival function from the archive_logs module located at the project root.
+from archive_logs import archive_and_clear_logs
 
 def run_vm(vm, stop_event):
     """Run the VM's event loop until stop_event is set."""
@@ -13,6 +20,9 @@ def run_vm(vm, stop_event):
         time.sleep(tick_interval)
 
 def main():
+    # Archive and clear old logs before starting a new experiment.
+    archive_and_clear_logs()
+
     # Set up command-line arguments.
     parser = argparse.ArgumentParser(description="Distributed System Simulation")
     parser.add_argument("--num_vms", type=int, default=3, 
