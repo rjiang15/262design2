@@ -6,41 +6,43 @@ import time
 import argparse
 from virtual_machine import VirtualMachine
 
-def run_vm():
-    parser = argparse.ArgumentParser(description="Run a single Virtual Machine as a separate process.")
-    parser.add_argument("--vm_id", type=int, required=True, 
-                        help="Unique ID for this VM.")
-    parser.add_argument("--tick_rate", type=float, required=True,
-                        help="Number of ticks per second for this VM.")
-    parser.add_argument("--base_port", type=int, default=5000,
-                        help="Base port for networking. The VM will listen on base_port + vm_id.")
-    parser.add_argument("--send_threshold", type=int, default=3,
-                        help="If random event <= this threshold, send messages. Otherwise internal event.")
-    parser.add_argument("--duration", type=int, default=60,
-                        help="How long (in seconds) this VM should run before shutting down.")
-    args = parser.parse_args()
-
+def run_vm_worker(vm_id, tick_rate, base_port, duration, send_threshold, total_vms):
     # Create the VirtualMachine instance.
     vm = VirtualMachine(
-        vm_id=args.vm_id,
-        tick_rate=args.tick_rate,
-        send_threshold=args.send_threshold
+        vm_id=vm_id,
+        tick_rate=tick_rate,
+        send_threshold=send_threshold
     )
 
-    # Print the current process ID to verify separate address spaces.
-    print(f"VM {args.vm_id} running in process with PID: {os.getpid()}")
+    # Start the network listener.
+    vm.start_network()  # Uses default host="127.0.0.1" and BASE_PORT logic in network.py
 
-    # Start the network listener with the provided host and base_port.
-    vm.start_network(host="127.0.0.1", base_port=args.base_port)
+    # Compute peer IDs from the total number of VMs.
+    peer_ids = [i for i in range(1, total_vms + 1) if i != vm_id]
+    vm.set_peers_from_config(peer_ids, host="127.0.0.1", base_port=base_port)
 
-    # Run the event loop for the specified duration.
+    # Print the process ID for verification.
+    print(f"VM {vm_id} started with tick_rate={vm.tick_rate} in process PID {os.getpid()}")
+
+    # Run the event loop in real time.
     start_time = time.time()
-    while time.time() - start_time < args.duration:
+    while time.time() - start_time < duration:
         vm.run_tick()
         time.sleep(1.0 / vm.tick_rate)
 
     vm.shutdown()
-    print(f"VM {args.vm_id} finished after {args.duration} seconds.")
+    print(f"VM {vm_id} finished after {duration} seconds.")
+
+def main():
+    parser = argparse.ArgumentParser(description="Run a single Virtual Machine in a separate process.")
+    parser.add_argument("--vm_id", type=int, required=True, help="Unique ID for this VM.")
+    parser.add_argument("--tick_rate", type=float, required=True, help="Tick rate for this VM.")
+    parser.add_argument("--base_port", type=int, default=5000, help="Base port for networking.")
+    parser.add_argument("--duration", type=int, default=60, help="Duration to run (seconds).")
+    parser.add_argument("--send_threshold", type=int, default=3, help="Send threshold for events.")
+    parser.add_argument("--total_vms", type=int, required=True, help="Total number of VMs in the simulation.")
+    args = parser.parse_args()
+    run_vm_worker(args.vm_id, args.tick_rate, args.base_port, args.duration, args.send_threshold, args.total_vms)
 
 if __name__ == "__main__":
-    run_vm()
+    main()
