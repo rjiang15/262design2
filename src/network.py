@@ -4,37 +4,42 @@ import socket
 import threading
 import json
 
-def start_server(vm, host="127.0.0.1", base_port=5000):
+BASE_PORT = 5000
+
+def start_server(vm, host="127.0.0.1"):
     """
-    Starts a server socket for a given virtual machine.
-    The VM listens on (host, base_port + vm.vm_id).
+    Start a server socket for the given VM.
+    The VM's server socket listens on BASE_PORT + vm.vm_id.
     """
-    port = base_port + vm.vm_id
+    port = BASE_PORT + vm.vm_id
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind((host, port))
     server_socket.listen(5)
     vm.log_event(f"Network: Listening on {host}:{port}")
     
     def handle_client(client_socket):
-        buffer = ""
-        while True:
-            try:
-                data = client_socket.recv(1024).decode("utf-8")
-                if not data:
-                    break  # connection closed
-                buffer += data
-                while "\n" in buffer:
-                    line, buffer = buffer.split("\n", 1)
-                    try:
-                        message = json.loads(line)
-                        vm.receive_message(message)
-                    except Exception as e:
-                        vm.log_event(f"Error decoding message: {e}")
-            except Exception as e:
-                vm.log_event(f"Error in client handler: {e}")
-                break
-        client_socket.close()
-    
+        """
+        Continuously receive messages from a connected client.
+        Each message is expected to be a JSON-encoded string terminated by newline.
+        """
+        with client_socket:
+            buffer = ""
+            while True:
+                try:
+                    data = client_socket.recv(1024).decode("utf-8")
+                    if not data:
+                        break  # Connection closed
+                    buffer += data
+                    while "\n" in buffer:
+                        line, buffer = buffer.split("\n", 1)
+                        try:
+                            message = json.loads(line)
+                            vm.receive_message(message)
+                        except json.JSONDecodeError:
+                            vm.log_event("Network: Failed to decode message.")
+                except ConnectionResetError:
+                    break
+
     def accept_connections():
         while not vm.network_stop_event.is_set():
             try:
@@ -58,19 +63,23 @@ def start_server(vm, host="127.0.0.1", base_port=5000):
 
 def connect_to_peer(vm, peer_vm_id, host="127.0.0.1", base_port=5000):
     """
-    Connects to a peer VM's server socket.
-    The peer is assumed to be listening on (host, base_port + peer_vm_id).
+    Connect to a peer's server socket.
+    Returns the connected client socket.
+    Uses base_port (default 5000) plus the peer_vm_id to determine the port.
     """
-    port = base_port + peer_vm_id
-    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    port = int(base_port) + int(peer_vm_id)
     while not vm.network_stop_event.is_set():
         try:
+            # Create a new socket on each attempt.
+            client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             client_socket.connect((host, port))
             vm.log_event(f"Network: Connected to peer VM {peer_vm_id} at {host}:{port}")
             return client_socket
         except ConnectionRefusedError:
+            client_socket.close()
             continue
         except Exception as e:
             vm.log_event(f"Network: Exception when connecting to peer VM {peer_vm_id}: {e}")
+            client_socket.close()
             break
     return None
