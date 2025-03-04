@@ -27,9 +27,8 @@ class VirtualMachine:
         self.tick_rate = tick_rate if tick_rate is not None else random.randint(tick_min, tick_max)
         self.clock = LogicalClock()
         self.msg_queue = []
-        # In multi-process mode, we won't have actual peer objects;
-        # instead, we store peer IDs for which we successfully connected.
-        self.peers = []  # list of peer VM IDs
+        # For multi-process mode, we store peer IDs rather than objects.
+        self.peers = []  
         self.peer_sockets = {}  # Map: peer vm_id -> socket
 
         # Network attributes.
@@ -43,12 +42,19 @@ class VirtualMachine:
             os.makedirs(log_dir)
         self.log_file = open(os.path.join(log_dir, f"vm_{self.vm_id}.log"), "w")
 
+    def set_peers(self, peers):
+        """(Thread-based) Set peers and establish network connections using object references."""
+        self.peers = [peer for peer in peers if peer.vm_id != self.vm_id]
+        for peer in self.peers:
+            sock = connect_to_peer(self, peer.vm_id)
+            if sock:
+                self.peer_sockets[peer.vm_id] = sock
+
     def set_peers_from_config(self, peer_ids, host="127.0.0.1", base_port=5000):
         """
         For multi-process mode: Given a list of peer IDs, attempt to connect to each peer's server.
-        Populate self.peer_sockets and record the IDs in self.peers.
         """
-        self.peers = []  # Reset the list
+        self.peers = []  # Reset peers list
         for peer_id in peer_ids:
             sock = connect_to_peer(self, peer_id, host=host, base_port=base_port)
             if sock:
@@ -62,6 +68,11 @@ class VirtualMachine:
         start_server(self)
 
     def log_event(self, event_str):
+        """
+        Write a log entry to this VM's log file and print it.
+        We now use a consistent format for clock updates:
+          CLOCK_UPDATE: <clock_value>; EVENT: <type>[; EXTRA]
+        """
         timestamp = time.time()
         log_entry = f"{timestamp:.3f} - {event_str}\n"
         self.log_file.write(log_entry)
@@ -69,20 +80,35 @@ class VirtualMachine:
         print(f"VM {self.vm_id}: {log_entry.strip()}")
 
     def process_message(self, message):
-        """Process incoming message."""
+        """Process an incoming message and log a uniform clock update."""
         received_clock = message.get('clock', 0)
         new_clock = self.clock.update(received_clock)
-        self.log_event(f"Received message: updated clock to {new_clock}. Queue length: {len(self.msg_queue)}")
+        # Log using a uniform format.
+        self.log_event(f"CLOCK_UPDATE: {new_clock}; EVENT: RECEIVED; QUEUE: {len(self.msg_queue)}")
 
     def internal_event(self):
-        """Process an internal event."""
+        """Process an internal event and log a uniform clock update."""
         new_clock = self.clock.tick()
-        self.log_event(f"Internal event: clock ticked to {new_clock}.")
+        self.log_event(f"CLOCK_UPDATE: {new_clock}; EVENT: INTERNAL")
+
+    def send_message(self, target_vm, message):
+        """Send a message and log a uniform clock update."""
+        new_clock = self.clock.tick()
+        message['clock'] = new_clock
+        message_json = json.dumps(message) + "\n"
+        sock = self.peer_sockets.get(target_vm.vm_id)
+        if sock:
+            try:
+                sock.sendall(message_json.encode("utf-8"))
+                self.log_event(f"CLOCK_UPDATE: {new_clock}; EVENT: SENT; TARGET: {target_vm.vm_id}")
+            except Exception as e:
+                self.log_event(f"Network send error to VM {target_vm.vm_id}: {e}")
+        else:
+            target_vm.receive_message(message)
+            self.log_event(f"CLOCK_UPDATE: {new_clock}; EVENT: SENT_DIRECT; TARGET: {target_vm.vm_id}")
 
     def send_message_by_id(self, peer_id, message):
-        """
-        Send a message to a peer specified by its ID, using the socket stored in self.peer_sockets.
-        """
+        """Send a message to a peer using its ID."""
         new_clock = self.clock.tick()
         message['clock'] = new_clock
         message_json = json.dumps(message) + "\n"
@@ -90,22 +116,23 @@ class VirtualMachine:
         if sock:
             try:
                 sock.sendall(message_json.encode("utf-8"))
-                self.log_event(f"Sent message to VM {peer_id}: clock is now {new_clock}.")
+                self.log_event(f"CLOCK_UPDATE: {new_clock}; EVENT: SENT; TARGET: {peer_id}")
             except Exception as e:
                 self.log_event(f"Network send error to VM {peer_id}: {e}")
         else:
             self.log_event(f"No connection to VM {peer_id}, message not sent.")
 
+    def receive_message(self, message):
+        """Enqueue received message."""
+        self.msg_queue.append(message)
+
     def run_tick(self):
         """
         Simulate one tick:
          - Process one queued message if available.
-         - Otherwise, generate a random number (1-10).
-           If <= send_threshold, then:
-             * If 1: send to first peer.
-             * If 2: send to second peer (if available).
-             * If 3: send to all peers.
-           Else, process an internal event.
+         - Otherwise, generate a random number (1-10):
+             If <= send_threshold, send messages;
+             Otherwise, perform an internal event.
         """
         if self.msg_queue:
             message = self.msg_queue.pop(0)
@@ -124,10 +151,6 @@ class VirtualMachine:
                     self.internal_event()
             else:
                 self.internal_event()
-
-    def receive_message(self, message):
-        """Enqueue received message."""
-        self.msg_queue.append(message)
 
     def shutdown(self):
         """Clean up resources."""
