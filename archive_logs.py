@@ -3,7 +3,15 @@ import glob
 import csv
 import time
 
-def archive_and_clear_logs(log_dir="logs", archive_dir="archives", archive_filename_prefix="logs_archive"):
+def clear_logs(log_dir="logs"):
+    """Delete all .log files in the given log directory."""
+    log_files = glob.glob(os.path.join(log_dir, "*.log"))
+    for log_file in log_files:
+        os.remove(log_file)
+    print("Logs cleared.")
+
+def archive_logs(log_dir="logs", archive_dir="archives", archive_filename_prefix="logs_archive"):
+    """Archive all .log files from log_dir into a CSV file stored in archive_dir."""
     # Ensure the archive directory exists.
     os.makedirs(archive_dir, exist_ok=True)
 
@@ -16,13 +24,13 @@ def archive_and_clear_logs(log_dir="logs", archive_dir="archives", archive_filen
     # Create a unique archive filename using a timestamp.
     timestamp = time.strftime("%Y%m%d-%H%M%S")
     archive_filename = f"{archive_filename_prefix}_{timestamp}.csv"
-    # Save the CSV file in the archive directory.
     archive_filepath = os.path.join(archive_dir, archive_filename)
     
     rows = []
     # Process each log file.
     for log_file in log_files:
-        vm_id = os.path.basename(log_file).split("_")[1].split(".")[0]  # e.g., vm_1.log -> 1
+        # Extract VM ID from filename, e.g., "vm_1.log" -> "1"
+        vm_id = os.path.basename(log_file).split("_")[1].split(".")[0]
         with open(log_file, "r") as f:
             for line in f:
                 line = line.strip()
@@ -40,12 +48,12 @@ def archive_and_clear_logs(log_dir="logs", archive_dir="archives", archive_filen
         writer.writerow(["Timestamp", "Event", "VM_ID"])
         writer.writerows(rows)
     print(f"Archived logs to {archive_filepath}")
-    
-    # Delete old log files.
-    for log_file in log_files:
-        os.remove(log_file)
-    print("Old log files deleted.")
 
-# Example usage in main.py (before starting a new experiment)
+def archive_and_clear_logs(log_dir="logs", archive_dir="archives", archive_filename_prefix="logs_archive"):
+    """Archive logs and then clear the log directory."""
+    archive_logs(log_dir, archive_dir, archive_filename_prefix)
+    clear_logs(log_dir)
+
+# For testing purposes:
 if __name__ == "__main__":
-    archive_and_clear_logs()  # Archive and clear old logs first.
+    archive_and_clear_logs()
