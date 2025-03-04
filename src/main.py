@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -8,7 +7,7 @@ import time
 import argparse
 import subprocess
 import random
-from archive_logs import clear_logs, archive_and_clear_logs
+from archive_logs import clear_logs, archive_and_clear_logs  # archive_and_clear_logs removed
 
 def main():
     # Clear old logs before starting the simulation.
