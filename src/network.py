@@ -13,6 +13,8 @@ def start_server(vm, host="127.0.0.1"):
     """
     port = BASE_PORT + vm.vm_id
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    # Allow the socket to reuse the address immediately.
+    server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     server_socket.bind((host, port))
     server_socket.listen(5)
     vm.log_event(f"Network: Listening on {host}:{port}")
@@ -70,7 +72,7 @@ def connect_to_peer(vm, peer_vm_id, host="127.0.0.1", base_port=5000):
     port = int(base_port) + int(peer_vm_id)
     while not vm.network_stop_event.is_set():
         try:
-            # Create a new socket on each attempt.
+            # Create a new socket for each attempt.
             client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             client_socket.connect((host, port))
             vm.log_event(f"Network: Connected to peer VM {peer_vm_id} at {host}:{port}")
