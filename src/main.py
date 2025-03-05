@@ -26,7 +26,7 @@ def main():
                         help="Minimum tick rate for VMs (default: 1)")
     parser.add_argument("--max_tick", type=int, default=6,
                         help="Maximum tick rate for VMs (default: 6)")
-    parser.add_argument("--send_threshold", type=int, default=3,
+    parser.add_argument("--send_threshold", type=int, default=10,
                         help="If random event <= this threshold, send messages (default: 3)")
     args = parser.parse_args()
 
