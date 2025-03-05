@@ -33,13 +33,13 @@ def analyze_logs(csv_file, reference_vm_id=1):
       4) Event Type Distribution by VM
 
     It also extracts parameter information from lines that start with "PARAMETERS:".
-    The graphs are saved in a subfolder under outputs/ named 'Graphs of <CSV filename>'.
+    The graphs are saved as PNGs in a subfolder under outputs/ named 'Graphs of <CSV filename>'.
     """
     # If csv_file is not an absolute path, assume it is in the archives folder.
     if not os.path.isabs(csv_file):
         csv_file = os.path.join("archives", csv_file)
     
-    # Create output directory
+    # Create Output Directory
     base_name = os.path.basename(csv_file)
     file_stem = os.path.splitext(base_name)[0]
     out_dir = os.path.join("outputs", f"Graphs of {file_stem}")
@@ -57,22 +57,23 @@ def analyze_logs(csv_file, reference_vm_id=1):
 
     # --- Robust extraction functions ---
     def extract_clock(event):
-        # 1) Check for uniform log format first
-        match = re.search(r"CLOCK_UPDATE:\s*(\d+)", event)
-        if match:
-            return int(match.group(1))
-        # 2) Look for "ticked to"
-        match = re.search(r"ticked to (\d+)", event)
-        if match:
-            return int(match.group(1))
-        # 3) Look for "is now"
-        match = re.search(r"is now (\d+)", event)
-        if match:
-            return int(match.group(1))
-        # 4) Look for "updated clock to"
-        match = re.search(r"updated clock to (\d+)", event)
-        if match:
-            return int(match.group(1))
+        """
+        Extracts the clock value from an event string.
+        Supports several formats and allows for optional decimals.
+        Now also supports the format: 'old clock was ... now X'
+        """
+        patterns = [
+            r"now (\d+(?:\.\d+)?)",  # new pattern for lines like "old clock was X, now Y."
+            r"CLOCK_UPDATE:\s*(\d+(?:\.\d+)?)",
+            r"ticked to (\d+(?:\.\d+)?)",
+            r"updated clock to (\d+(?:\.\d+)?)",
+            r"clock is (\d+(?:\.\d+)?)",
+            r"is now (\d+(?:\.\d+)?)",
+        ]
+        for pat in patterns:
+            match = re.search(pat, event)
+            if match:
+                return float(match.group(1))
         return None
 
     def extract_queue_length(event):
@@ -133,7 +134,15 @@ def analyze_logs(csv_file, reference_vm_id=1):
         color = vm_colors.get(vm_id, "gray")
         params = vm_params.get(vm_id, "")
         label = f"VM {vm_id} ({params})" if params else f"VM {vm_id}"
-        plt.plot(group["Timestamp"], group["ClockValue"], marker="o", linestyle="-", label=label, color=color)
+        plt.plot(
+            group["Timestamp"],
+            group["ClockValue"],
+            linestyle="-",
+            linewidth=0.8,
+            marker=None,
+            label=label,
+            color=color
+        )
     plt.xlabel("System Timestamp (seconds from start)")
     plt.ylabel("Logical Clock Value")
     plt.title("Logical Clock Evolution Over Time")
@@ -176,7 +185,6 @@ def analyze_logs(csv_file, reference_vm_id=1):
             if len(vm_data) < 1:
                 print(f"Not enough points for VM {vm_id} to plot drift.")
                 continue
-            # Adjust vm_data timestamps to ensure uniqueness
             ref_values = f_ref(make_unique_timestamps(vm_data["Timestamp"].values))
             drift = vm_data["ClockValue"].values - ref_values
             color = vm_colors.get(vm_id, "gray")

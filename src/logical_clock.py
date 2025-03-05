@@ -22,6 +22,12 @@ class LogicalClock:
         self.time = max(self.time, received_time) + 1
         return self.time
 
+    def get_time(self):
+        """
+        Return the current clock value without modifying it.
+        """
+        return self.time
+
 if __name__ == "__main__":
     # Quick test of the LogicalClock class functionality.
     clock = LogicalClock()

@@ -4,7 +4,6 @@ import os
 import random
 import time
 import json
-import threading
 from logical_clock import LogicalClock
 from network import start_server, connect_to_peer
 
@@ -12,149 +11,199 @@ class VirtualMachine:
     def __init__(self, vm_id, tick_rate=None, tick_min=1, tick_max=6, send_threshold=3):
         """
         Initialize a virtual machine.
-        
+
         Args:
             vm_id (int): Unique identifier.
-            tick_rate (int, optional): If provided, this tick rate is used.
-            tick_min (int): Minimum tick rate.
-            tick_max (int): Maximum tick rate.
-            send_threshold (int): If a random event's value is <= this, send messages.
+            tick_rate (float, optional): The real-time ticks per second.
+            tick_min (int): Minimum tick rate if none is specified.
+            tick_max (int): Maximum tick rate if none is specified.
+            send_threshold (int): If random event <= this threshold => attempt to send messages,
+                                  else => internal event.
         """
         self.vm_id = vm_id
         self.tick_min = tick_min
         self.tick_max = tick_max
         self.send_threshold = send_threshold
         self.tick_rate = tick_rate if tick_rate is not None else random.randint(tick_min, tick_max)
+
+        # Create a logical clock (Lamport-based)
         self.clock = LogicalClock()
+
+        # Incoming message queue
         self.msg_queue = []
-        # For multi-process mode, peers will be set using a configuration method.
-        self.peers = []  
-        self.peer_sockets = {}  # Map: peer vm_id -> socket
 
-        # Network attributes.
-        self.server_socket = None
-        self.network_thread = None
-        self.network_stop_event = threading.Event()
+        # List of peers (by ID or object)
+        self.peers = []
+        # Sockets keyed by peer VM ID
+        self.peer_sockets = {}
 
-        # Ensure logs directory exists.
+        # Network attributes
+        self.server_socket = None  # Listening socket from start_server()
+
+        # Logging setup
         log_dir = os.path.join(os.path.dirname(__file__), "..", "logs")
-        if not os.path.exists(log_dir):
-            os.makedirs(log_dir)
+        os.makedirs(log_dir, exist_ok=True)
         self.log_file = open(os.path.join(log_dir, f"vm_{self.vm_id}.log"), "w")
 
-        # Log the VM's parameters as a distinct event.
+        # Log VM parameters
         self.log_event(f"PARAMETERS: tick_rate = {self.tick_rate}, send_threshold = {self.send_threshold}")
 
-    def set_peers(self, peers):
-        """Set peers and establish network connections (thread-based mode)."""
-        self.peers = [peer for peer in peers if peer.vm_id != self.vm_id]
-        for peer in self.peers:
-            sock = connect_to_peer(self, peer.vm_id)
-            if sock:
-                self.peer_sockets[peer.vm_id] = sock
-
-    def set_peers_from_config(self, peer_ids, host="127.0.0.1", base_port=5000):
-        """
-        For multi-process mode: Given a list of peer IDs, attempt to connect to each peer's server.
-        """
-        self.peers = []  # Reset peers list
-        for peer_id in peer_ids:
-            sock = connect_to_peer(self, peer_id, host=host, base_port=base_port)
-            if sock:
-                self.peer_sockets[peer_id] = sock
-                self.peers.append(peer_id)
-        if not self.peers:
-            self.log_event("No peers connected.")
-
-    def start_network(self):
-        """Start network listener."""
-        start_server(self)
-
     def log_event(self, event_str):
-        timestamp = time.time()
+        """Write a timestamped event line to the VM's log file (and print)."""
+        timestamp = time.perf_counter()
         log_entry = f"{timestamp:.3f} - {event_str}\n"
         self.log_file.write(log_entry)
         self.log_file.flush()
         print(f"VM {self.vm_id}: {log_entry.strip()}")
 
+    def start_network(self):
+        """
+        Start a server socket for this VM to accept connections
+        from peers (multi-process mode).
+        """
+        start_server(self)
+
+    def set_peers(self, peers):
+        """
+        Set references to peer VMs (intra-process) or IDs (multi-process).
+        Then connect sockets for each peer if possible.
+        """
+        self.peers = [p for p in peers if p != self.vm_id]
+        for pid in self.peers:
+            sock = connect_to_peer(self, pid)
+            if sock:
+                self.peer_sockets[pid] = sock
+
+    def set_peers_from_config(self, peer_ids, host="127.0.0.1", base_port=5000):
+        """
+        Multi-process mode: connect to each peer by ID and store the socket.
+        """
+        self.peers = []
+        for pid in peer_ids:
+            if pid == self.vm_id:
+                continue
+            sock = connect_to_peer(self, pid, host=host, base_port=base_port)
+            if sock:
+                self.peer_sockets[pid] = sock
+                self.peers.append(pid)
+
     def process_message(self, message):
-        """Process incoming message."""
-        received_clock = message.get('clock', 0)
-        new_clock = self.clock.update(received_clock)
-        self.log_event(f"Received message: updated clock to {new_clock}. Queue length: {len(self.msg_queue)}")
+        """
+        Process a single message from the queue:
+          - local_clock = max(local_clock, message["clock"]) + 1
+        """
+        old_clock = self.clock.get_time()
+        incoming_clock = message.get('clock', 0)
+        new_clock = self.clock.update(incoming_clock)
+        self.log_event(
+            f"Received message: old clock was {old_clock}, incoming was {incoming_clock}, now {new_clock}. "
+            f"Queue length: {len(self.msg_queue)}"
+        )
 
     def internal_event(self):
-        """Process an internal event."""
+        """Perform an internal event => increment local clock, then log."""
+        old_clock = self.clock.get_time()
         new_clock = self.clock.tick()
-        self.log_event(f"Internal event: clock ticked to {new_clock}.")
+        self.log_event(f"Internal event: old clock was {old_clock}, now {new_clock}.")
 
     def send_message(self, target_vm, message):
-        """Send message over the network."""
-        new_clock = self.clock.tick()
-        message['clock'] = new_clock
-        message_json = json.dumps(message) + "\n"
+        """
+        Send a message (intra-process style). We attach the old clock value,
+        then increment locally, then log the new clock.
+        """
+        old_clock = self.clock.get_time()
+        message['clock'] = old_clock
+
         sock = self.peer_sockets.get(target_vm.vm_id)
+        msg_json = json.dumps(message) + "\n"
+
         if sock:
             try:
-                sock.sendall(message_json.encode("utf-8"))
-                self.log_event(f"Sent message to VM {target_vm.vm_id}: clock is now {new_clock}.")
+                sock.sendall(msg_json.encode("utf-8"))
+                new_clock = self.clock.tick()
+                self.log_event(
+                    f"Sent message to VM {target_vm.vm_id}: old clock was {old_clock}, now {new_clock}."
+                )
             except Exception as e:
                 self.log_event(f"Network send error to VM {target_vm.vm_id}: {e}")
         else:
+            # Direct call if no socket
             target_vm.receive_message(message)
-            self.log_event(f"Sent message directly to VM {target_vm.vm_id}: clock is now {new_clock}.")
+            new_clock = self.clock.tick()
+            self.log_event(
+                f"Sent message directly to VM {target_vm.vm_id}: old clock was {old_clock}, now {new_clock}."
+            )
 
     def send_message_by_id(self, peer_id, message):
-        """Send message using peer ID."""
-        new_clock = self.clock.tick()
-        message['clock'] = new_clock
-        message_json = json.dumps(message) + "\n"
+        """
+        Send a message (multi-process style) by peer ID.
+        Attach old clock, increment, then log.
+        """
+        old_clock = self.clock.get_time()
+        message['clock'] = old_clock
+        msg_json = json.dumps(message) + "\n"
+
         sock = self.peer_sockets.get(peer_id)
         if sock:
             try:
-                sock.sendall(message_json.encode("utf-8"))
-                self.log_event(f"Sent message to VM {peer_id}: clock is now {new_clock}.")
+                sock.sendall(msg_json.encode("utf-8"))
+                new_clock = self.clock.tick()
+                self.log_event(
+                    f"Sent message to VM {peer_id}: old clock was {old_clock}, now {new_clock}."
+                )
             except Exception as e:
                 self.log_event(f"Network send error to VM {peer_id}: {e}")
+                # Even on error, we do a local tick
+                new_clock = self.clock.tick()
+                self.log_event(
+                    f"Local clock increment after failed send: old clock was {old_clock}, now {new_clock}."
+                )
         else:
+            # No connection => can't send
             self.log_event(f"No connection to VM {peer_id}, message not sent.")
+            new_clock = self.clock.tick()
+            self.log_event(
+                f"Local clock increment after failed send: old clock was {old_clock}, now {new_clock}."
+            )
 
     def receive_message(self, message):
-        """Enqueue received message."""
+        """Enqueue a message for run_tick() to process on the next iteration."""
         self.msg_queue.append(message)
 
     def run_tick(self):
         """
-        Simulate one tick:
-         - Process one queued message if available.
-         - Otherwise, generate a random number (1-10).
-           If <= send_threshold, then:
-             * 1: send to first peer.
-             * 2: send to second peer (if available).
-             * 3: send to all peers.
-           Else, process an internal event.
+        Perform one “tick” of the VM’s logic:
+          - If there is a queued message, process it.
+          - Otherwise, pick a random event: send or internal event.
         """
         if self.msg_queue:
-            message = self.msg_queue.pop(0)
-            self.process_message(message)
+            msg = self.msg_queue.pop(0)
+            self.process_message(msg)
         else:
-            event_choice = random.randint(1, 10)
-            if event_choice <= self.send_threshold:
-                if event_choice == 1 and self.peers:
-                    self.send_message_by_id(self.peers[0], {'clock': 0})
-                elif event_choice == 2 and len(self.peers) >= 2:
-                    self.send_message_by_id(self.peers[1], {'clock': 0})
-                elif event_choice == 3 and self.peers:
-                    for peer in self.peers:
-                        self.send_message_by_id(peer, {'clock': 0})
+            event_choice = random.randint(1, self.send_threshold)
+            if event_choice == 1 and self.peers:
+                first = self.peers[0]
+                if isinstance(first, int):
+                    self.send_message_by_id(first, {})
                 else:
-                    self.internal_event()
+                    self.send_message(first, {})
+            elif event_choice == 2 and len(self.peers) >= 2:
+                second = self.peers[1]
+                if isinstance(second, int):
+                    self.send_message_by_id(second, {})
+                else:
+                    self.send_message(second, {})
+            elif event_choice == 3 and self.peers:
+                for p in self.peers:
+                    if isinstance(p, int):
+                        self.send_message_by_id(p, {})
+                    else:
+                        self.send_message(p, {})
             else:
                 self.internal_event()
 
     def shutdown(self):
         """Clean up resources."""
-        self.network_stop_event.set()
         if self.server_socket:
             self.server_socket.close()
         for sock in self.peer_sockets.values():
@@ -165,9 +214,8 @@ class VirtualMachine:
         self.log_file.close()
 
 if __name__ == "__main__":
-    # Simple test for a single VM.
-    vm = VirtualMachine(vm_id=1)
-    vm.set_peers([])  # For a single VM, no peers.
+    # Simple test for a single VM
+    vm = VirtualMachine(vm_id=1, tick_rate=1)
     vm.start_network()
-    print(f"VM {vm.vm_id} initialized with tick rate: {vm.tick_rate} ticks per second.")
+    print(f"VM {vm.vm_id} started with tick_rate={vm.tick_rate}.")
     vm.run_tick()
