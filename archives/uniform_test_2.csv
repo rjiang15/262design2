@@ -1,0 +1,588 @@
+Timestamp,Event,VM_ID
+3559399.688,"PARAMETERS: tick_rate = 3.0, send_threshold = 10",3
+3559399.688,Network: Listening on 127.0.0.1:5003,3
+3559399.721,"Network: Accepted connection from ('127.0.0.1', 50369)",3
+3559400.713,Network: Connected to peer VM 1 at 127.0.0.1:5001,3
+3559400.719,"Network: Accepted connection from ('127.0.0.1', 50388)",3
+3559400.725,Network: Connected to peer VM 2 at 127.0.0.1:5002,3
+3559401.061,"Received message: old clock was 0, incoming was 4, now 5. Queue length: 0",3
+3559401.393,"Internal event: old clock was 5, now 6.",3
+3559401.730,"Received message: old clock was 6, incoming was 5, now 7. Queue length: 0",3
+3559402.063,"Internal event: old clock was 7, now 8.",3
+3559402.397,"Received message: old clock was 8, incoming was 7, now 9. Queue length: 0",3
+3559402.731,"Sent message to VM 1: old clock was 9, now 10.",3
+3559402.731,"Sent message to VM 2: old clock was 10, now 11.",3
+3559403.060,"Internal event: old clock was 11, now 12.",3
+3559403.397,"Internal event: old clock was 12, now 13.",3
+3559403.730,"Internal event: old clock was 13, now 14.",3
+3559404.059,"Internal event: old clock was 14, now 15.",3
+3559404.394,"Sent message to VM 1: old clock was 15, now 16.",3
+3559404.730,"Received message: old clock was 16, incoming was 15, now 17. Queue length: 0",3
+3559405.061,"Received message: old clock was 17, incoming was 17, now 18. Queue length: 0",3
+3559405.396,"Internal event: old clock was 18, now 19.",3
+3559405.730,"Internal event: old clock was 19, now 20.",3
+3559406.062,"Internal event: old clock was 20, now 21.",3
+3559406.396,"Received message: old clock was 21, incoming was 19, now 22. Queue length: 2",3
+3559406.726,"Received message: old clock was 22, incoming was 20, now 23. Queue length: 1",3
+3559407.059,"Received message: old clock was 23, incoming was 21, now 24. Queue length: 0",3
+3559407.397,"Internal event: old clock was 24, now 25.",3
+3559407.727,"Internal event: old clock was 25, now 26.",3
+3559408.062,"Internal event: old clock was 26, now 27.",3
+3559408.393,"Sent message to VM 2: old clock was 27, now 28.",3
+3559408.726,"Sent message to VM 2: old clock was 28, now 29.",3
+3559409.063,"Received message: old clock was 29, incoming was 29, now 30. Queue length: 0",3
+3559409.394,"Received message: old clock was 30, incoming was 30, now 31. Queue length: 0",3
+3559409.729,"Received message: old clock was 31, incoming was 31, now 32. Queue length: 0",3
+3559410.063,"Internal event: old clock was 32, now 33.",3
+3559410.394,"Internal event: old clock was 33, now 34.",3
+3559410.729,"Received message: old clock was 34, incoming was 34, now 35. Queue length: 0",3
+3559411.060,"Received message: old clock was 35, incoming was 35, now 36. Queue length: 0",3
+3559411.397,"Sent message to VM 2: old clock was 36, now 37.",3
+3559411.730,"Internal event: old clock was 37, now 38.",3
+3559412.064,"Internal event: old clock was 38, now 39.",3
+3559412.397,"Sent message to VM 1: old clock was 39, now 40.",3
+3559412.397,"Sent message to VM 2: old clock was 40, now 41.",3
+3559412.730,"Internal event: old clock was 41, now 42.",3
+3559413.061,"Sent message to VM 1: old clock was 42, now 43.",3
+3559413.393,"Internal event: old clock was 43, now 44.",3
+3559413.730,"Received message: old clock was 44, incoming was 42, now 45. Queue length: 0",3
+3559414.060,"Received message: old clock was 45, incoming was 45, now 46. Queue length: 0",3
+3559414.397,"Internal event: old clock was 46, now 47.",3
+3559414.730,"Internal event: old clock was 47, now 48.",3
+3559415.060,"Sent message to VM 1: old clock was 48, now 49.",3
+3559415.060,"Sent message to VM 2: old clock was 49, now 50.",3
+3559415.393,"Received message: old clock was 50, incoming was 48, now 51. Queue length: 0",3
+3559415.727,"Internal event: old clock was 51, now 52.",3
+3559416.060,"Sent message to VM 1: old clock was 52, now 53.",3
+3559416.060,"Sent message to VM 2: old clock was 53, now 54.",3
+3559416.394,"Internal event: old clock was 54, now 55.",3
+3559416.729,"Internal event: old clock was 55, now 56.",3
+3559417.062,"Internal event: old clock was 56, now 57.",3
+3559417.396,"Internal event: old clock was 57, now 58.",3
+3559417.729,"Received message: old clock was 58, incoming was 57, now 59. Queue length: 0",3
+3559418.063,"Internal event: old clock was 59, now 60.",3
+3559418.394,"Internal event: old clock was 60, now 61.",3
+3559418.727,"Internal event: old clock was 61, now 62.",3
+3559419.063,"Internal event: old clock was 62, now 63.",3
+3559419.397,"Received message: old clock was 63, incoming was 62, now 64. Queue length: 0",3
+3559419.730,"Received message: old clock was 64, incoming was 64, now 65. Queue length: 0",3
+3559420.064,"Received message: old clock was 65, incoming was 65, now 66. Queue length: 0",3
+3559420.393,"Received message: old clock was 66, incoming was 66, now 67. Queue length: 0",3
+3559420.730,"Internal event: old clock was 67, now 68.",3
+3559421.063,"Internal event: old clock was 68, now 69.",3
+3559421.397,"Received message: old clock was 69, incoming was 69, now 70. Queue length: 0",3
+3559421.730,"Internal event: old clock was 70, now 71.",3
+3559422.060,"Received message: old clock was 71, incoming was 71, now 72. Queue length: 0",3
+3559422.397,"Internal event: old clock was 72, now 73.",3
+3559422.730,"Internal event: old clock was 73, now 74.",3
+3559423.060,"Sent message to VM 1: old clock was 74, now 75.",3
+3559423.060,"Sent message to VM 2: old clock was 75, now 76.",3
+3559423.397,"Internal event: old clock was 76, now 77.",3
+3559423.726,"Internal event: old clock was 77, now 78.",3
+3559424.064,"Received message: old clock was 78, incoming was 77, now 79. Queue length: 0",3
+3559424.397,"Sent message to VM 1: old clock was 79, now 80.",3
+3559424.730,"Internal event: old clock was 80, now 81.",3
+3559425.061,"Internal event: old clock was 81, now 82.",3
+3559425.397,"Received message: old clock was 82, incoming was 81, now 83. Queue length: 1",3
+3559425.729,"Received message: old clock was 83, incoming was 82, now 84. Queue length: 1",3
+3559426.064,"Received message: old clock was 84, incoming was 83, now 85. Queue length: 0",3
+3559426.397,"Received message: old clock was 85, incoming was 85, now 86. Queue length: 0",3
+3559426.726,"Internal event: old clock was 86, now 87.",3
+3559427.062,"Internal event: old clock was 87, now 88.",3
+3559427.395,"Received message: old clock was 88, incoming was 88, now 89. Queue length: 1",3
+3559427.730,"Received message: old clock was 89, incoming was 89, now 90. Queue length: 0",3
+3559428.062,"Internal event: old clock was 90, now 91.",3
+3559428.393,"Received message: old clock was 91, incoming was 92, now 93. Queue length: 1",3
+3559428.730,"Received message: old clock was 93, incoming was 93, now 94. Queue length: 2",3
+3559429.060,"Received message: old clock was 94, incoming was 92, now 95. Queue length: 1",3
+3559429.397,"Received message: old clock was 95, incoming was 95, now 96. Queue length: 0",3
+3559429.727,"Internal event: old clock was 96, now 97.",3
+3559430.078,"Internal event: old clock was 97, now 98.",3
+3559430.397,"Sent message to VM 2: old clock was 98, now 99.",3
+3559430.727,"Internal event: old clock was 99, now 100.",3
+3559431.064,"Received message: old clock was 100, incoming was 102, now 103. Queue length: 0",3
+3559431.394,"Internal event: old clock was 103, now 104.",3
+3559431.729,"Received message: old clock was 104, incoming was 105, now 106. Queue length: 0",3
+3559432.064,"Internal event: old clock was 106, now 107.",3
+3559432.393,"Internal event: old clock was 107, now 108.",3
+3559432.728,"Sent message to VM 1: old clock was 108, now 109.",3
+3559432.728,"Sent message to VM 2: old clock was 109, now 110.",3
+3559433.061,"Sent message to VM 1: old clock was 110, now 111.",3
+3559433.397,"Internal event: old clock was 111, now 112.",3
+3559433.731,"Sent message to VM 2: old clock was 112, now 113.",3
+3559434.064,"Sent message to VM 1: old clock was 113, now 114.",3
+3559434.393,"Internal event: old clock was 114, now 115.",3
+3559434.731,"Internal event: old clock was 115, now 116.",3
+3559435.064,"Internal event: old clock was 116, now 117.",3
+3559435.393,"Sent message to VM 1: old clock was 117, now 118.",3
+3559435.730,"Received message: old clock was 118, incoming was 118, now 119. Queue length: 0",3
+3559436.059,"Internal event: old clock was 119, now 120.",3
+3559436.396,"Received message: old clock was 120, incoming was 121, now 122. Queue length: 0",3
+3559436.730,"Internal event: old clock was 122, now 123.",3
+3559437.061,"Internal event: old clock was 123, now 124.",3
+3559437.392,"Internal event: old clock was 124, now 125.",3
+3559437.727,"Received message: old clock was 125, incoming was 124, now 126. Queue length: 0",3
+3559438.063,"Internal event: old clock was 126, now 127.",3
+3559438.397,"Internal event: old clock was 127, now 128.",3
+3559438.730,"Internal event: old clock was 128, now 129.",3
+3559439.064,"Internal event: old clock was 129, now 130.",3
+3559439.393,"Sent message to VM 2: old clock was 130, now 131.",3
+3559439.730,"Internal event: old clock was 131, now 132.",3
+3559440.064,"Received message: old clock was 132, incoming was 132, now 133. Queue length: 0",3
+3559440.397,"Internal event: old clock was 133, now 134.",3
+3559440.727,"Sent message to VM 1: old clock was 134, now 135.",3
+3559440.727,"Sent message to VM 2: old clock was 135, now 136.",3
+3559441.062,"Sent message to VM 1: old clock was 136, now 137.",3
+3559441.062,"Sent message to VM 2: old clock was 137, now 138.",3
+3559441.394,"Internal event: old clock was 138, now 139.",3
+3559441.726,"Internal event: old clock was 139, now 140.",3
+3559442.059,"Internal event: old clock was 140, now 141.",3
+3559442.397,"Sent message to VM 1: old clock was 141, now 142.",3
+3559442.730,"Internal event: old clock was 142, now 143.",3
+3559443.059,"Internal event: old clock was 143, now 144.",3
+3559443.393,"Internal event: old clock was 144, now 145.",3
+3559443.731,"Sent message to VM 2: old clock was 145, now 146.",3
+3559444.064,"Internal event: old clock was 146, now 147.",3
+3559444.394,"Internal event: old clock was 147, now 148.",3
+3559444.731,"Sent message to VM 2: old clock was 148, now 149.",3
+3559445.059,"Sent message to VM 1: old clock was 149, now 150.",3
+3559445.392,"Internal event: old clock was 150, now 151.",3
+3559445.729,"Received message: old clock was 151, incoming was 150, now 152. Queue length: 0",3
+3559446.063,"Sent message to VM 1: old clock was 152, now 153.",3
+3559446.064,"Sent message to VM 2: old clock was 153, now 154.",3
+3559446.397,"Internal event: old clock was 154, now 155.",3
+3559446.729,"Sent message to VM 2: old clock was 155, now 156.",3
+3559447.064,"Internal event: old clock was 156, now 157.",3
+3559447.395,"Internal event: old clock was 157, now 158.",3
+3559447.730,"Internal event: old clock was 158, now 159.",3
+3559448.061,"Received message: old clock was 159, incoming was 157, now 160. Queue length: 0",3
+3559448.397,"Sent message to VM 1: old clock was 160, now 161.",3
+3559448.729,"Internal event: old clock was 161, now 162.",3
+3559449.061,"Internal event: old clock was 162, now 163.",3
+3559449.396,"Internal event: old clock was 163, now 164.",3
+3559449.731,"Sent message to VM 2: old clock was 164, now 165.",3
+3559450.060,"Received message: old clock was 165, incoming was 164, now 166. Queue length: 0",3
+3559450.396,"Sent message to VM 1: old clock was 166, now 167.",3
+3559450.396,"Sent message to VM 2: old clock was 167, now 168.",3
+3559450.727,"Internal event: old clock was 168, now 169.",3
+3559451.063,"Sent message to VM 1: old clock was 169, now 170.",3
+3559451.063,"Sent message to VM 2: old clock was 170, now 171.",3
+3559451.397,"Internal event: old clock was 171, now 172.",3
+3559451.730,"Internal event: old clock was 172, now 173.",3
+3559452.064,"Received message: old clock was 173, incoming was 172, now 174. Queue length: 0",3
+3559452.393,"Internal event: old clock was 174, now 175.",3
+3559452.730,"Internal event: old clock was 175, now 176.",3
+3559453.060,"Received message: old clock was 176, incoming was 174, now 177. Queue length: 0",3
+3559453.393,"Internal event: old clock was 177, now 178.",3
+3559453.730,"Received message: old clock was 178, incoming was 177, now 179. Queue length: 0",3
+3559454.063,"Sent message to VM 2: old clock was 179, now 180.",3
+3559454.394,"Sent message to VM 1: old clock was 180, now 181.",3
+3559454.728,"Internal event: old clock was 181, now 182.",3
+3559455.063,"Internal event: old clock was 182, now 183.",3
+3559455.396,"Internal event: old clock was 183, now 184.",3
+3559455.726,"Sent message to VM 1: old clock was 184, now 185.",3
+3559456.064,"Received message: old clock was 185, incoming was 184, now 186. Queue length: 0",3
+3559456.393,"Internal event: old clock was 186, now 187.",3
+3559456.728,"Received message: old clock was 187, incoming was 187, now 188. Queue length: 0",3
+3559457.063,"Internal event: old clock was 188, now 189.",3
+3559457.394,"Internal event: old clock was 189, now 190.",3
+3559457.730,"Internal event: old clock was 190, now 191.",3
+3559458.064,"Internal event: old clock was 191, now 192.",3
+3559458.394,"Received message: old clock was 192, incoming was 192, now 193. Queue length: 0",3
+3559458.731,"Sent message to VM 2: old clock was 193, now 194.",3
+3559459.064,"Internal event: old clock was 194, now 195.",3
+3559459.394,"Received message: old clock was 195, incoming was 195, now 196. Queue length: 0",3
+3559459.730,"Received message: old clock was 196, incoming was 197, now 198. Queue length: 0",3
+3559460.061,"Internal event: old clock was 198, now 199.",3
+3559460.398,"Internal event: old clock was 199, now 200.",3
+3559399.688,"PARAMETERS: tick_rate = 3.0, send_threshold = 10",2
+3559399.688,Network: Listening on 127.0.0.1:5002,2
+3559399.700,"Network: Accepted connection from ('127.0.0.1', 50368)",2
+3559400.705,Network: Connected to peer VM 1 at 127.0.0.1:5001,2
+3559400.719,Network: Connected to peer VM 3 at 127.0.0.1:5003,2
+3559400.725,"Network: Accepted connection from ('127.0.0.1', 50389)",2
+3559401.056,"Received message: old clock was 0, incoming was 3, now 4. Queue length: 0",2
+3559401.387,"Internal event: old clock was 4, now 5.",2
+3559401.725,"Sent message to VM 3: old clock was 5, now 6.",2
+3559402.058,"Internal event: old clock was 6, now 7.",2
+3559402.391,"Sent message to VM 3: old clock was 7, now 8.",2
+3559402.722,"Internal event: old clock was 8, now 9.",2
+3559403.057,"Received message: old clock was 9, incoming was 10, now 11. Queue length: 0",2
+3559403.388,"Internal event: old clock was 11, now 12.",2
+3559403.723,"Internal event: old clock was 12, now 13.",2
+3559404.057,"Internal event: old clock was 13, now 14.",2
+3559404.394,"Sent message to VM 1: old clock was 14, now 15.",2
+3559404.394,"Sent message to VM 3: old clock was 15, now 16.",2
+3559404.724,"Internal event: old clock was 16, now 17.",2
+3559405.057,"Sent message to VM 3: old clock was 17, now 18.",2
+3559405.391,"Internal event: old clock was 18, now 19.",2
+3559405.724,"Internal event: old clock was 19, now 20.",2
+3559406.057,"Internal event: old clock was 20, now 21.",2
+3559406.391,"Sent message to VM 3: old clock was 21, now 22.",2
+3559406.724,"Internal event: old clock was 22, now 23.",2
+3559407.058,"Internal event: old clock was 23, now 24.",2
+3559407.391,"Internal event: old clock was 24, now 25.",2
+3559407.721,"Internal event: old clock was 25, now 26.",2
+3559408.058,"Sent message to VM 1: old clock was 26, now 27.",2
+3559408.389,"Sent message to VM 1: old clock was 27, now 28.",2
+3559408.723,"Received message: old clock was 28, incoming was 27, now 29. Queue length: 0",2
+3559409.057,"Received message: old clock was 29, incoming was 28, now 30. Queue length: 1",2
+3559409.388,"Received message: old clock was 30, incoming was 28, now 31. Queue length: 0",2
+3559409.720,"Internal event: old clock was 31, now 32.",2
+3559410.058,"Received message: old clock was 32, incoming was 32, now 33. Queue length: 0",2
+3559410.389,"Internal event: old clock was 33, now 34.",2
+3559410.721,"Internal event: old clock was 34, now 35.",2
+3559411.056,"Sent message to VM 3: old clock was 35, now 36.",2
+3559411.391,"Internal event: old clock was 36, now 37.",2
+3559411.724,"Received message: old clock was 37, incoming was 36, now 38. Queue length: 0",2
+3559412.058,"Internal event: old clock was 38, now 39.",2
+3559412.386,"Internal event: old clock was 39, now 40.",2
+3559412.720,"Received message: old clock was 40, incoming was 40, now 41. Queue length: 0",2
+3559413.057,"Internal event: old clock was 41, now 42.",2
+3559413.391,"Sent message to VM 3: old clock was 42, now 43.",2
+3559413.722,"Received message: old clock was 43, incoming was 43, now 44. Queue length: 0",2
+3559414.058,"Sent message to VM 1: old clock was 44, now 45.",2
+3559414.058,"Sent message to VM 3: old clock was 45, now 46.",2
+3559414.391,"Internal event: old clock was 46, now 47.",2
+3559414.724,"Internal event: old clock was 47, now 48.",2
+3559415.055,"Internal event: old clock was 48, now 49.",2
+3559415.391,"Received message: old clock was 49, incoming was 47, now 50. Queue length: 1",2
+3559415.721,"Received message: old clock was 50, incoming was 49, now 51. Queue length: 0",2
+3559416.054,"Internal event: old clock was 51, now 52.",2
+3559416.390,"Received message: old clock was 52, incoming was 53, now 54. Queue length: 0",2
+3559416.721,"Internal event: old clock was 54, now 55.",2
+3559417.056,"Internal event: old clock was 55, now 56.",2
+3559417.391,"Internal event: old clock was 56, now 57.",2
+3559417.724,"Received message: old clock was 57, incoming was 56, now 58. Queue length: 0",2
+3559418.058,"Received message: old clock was 58, incoming was 58, now 59. Queue length: 0",2
+3559418.391,"Received message: old clock was 59, incoming was 59, now 60. Queue length: 0",2
+3559418.724,"Received message: old clock was 60, incoming was 60, now 61. Queue length: 0",2
+3559419.057,"Sent message to VM 1: old clock was 61, now 62.",2
+3559419.057,"Sent message to VM 3: old clock was 62, now 63.",2
+3559419.391,"Internal event: old clock was 63, now 64.",2
+3559419.724,"Sent message to VM 3: old clock was 64, now 65.",2
+3559420.058,"Sent message to VM 3: old clock was 65, now 66.",2
+3559420.389,"Sent message to VM 3: old clock was 66, now 67.",2
+3559420.722,"Internal event: old clock was 67, now 68.",2
+3559421.057,"Internal event: old clock was 68, now 69.",2
+3559421.391,"Sent message to VM 3: old clock was 69, now 70.",2
+3559421.722,"Internal event: old clock was 70, now 71.",2
+3559422.058,"Received message: old clock was 71, incoming was 70, now 72. Queue length: 0",2
+3559422.391,"Internal event: old clock was 72, now 73.",2
+3559422.724,"Internal event: old clock was 73, now 74.",2
+3559423.058,"Sent message to VM 1: old clock was 74, now 75.",2
+3559423.391,"Received message: old clock was 75, incoming was 75, now 76. Queue length: 0",2
+3559423.724,"Sent message to VM 1: old clock was 76, now 77.",2
+3559423.725,"Sent message to VM 3: old clock was 77, now 78.",2
+3559424.053,"Sent message to VM 1: old clock was 78, now 79.",2
+3559424.391,"Internal event: old clock was 79, now 80.",2
+3559424.724,"Internal event: old clock was 80, now 81.",2
+3559425.058,"Sent message to VM 3: old clock was 81, now 82.",2
+3559425.387,"Internal event: old clock was 82, now 83.",2
+3559425.721,"Received message: old clock was 83, incoming was 81, now 84. Queue length: 0",2
+3559426.054,"Internal event: old clock was 84, now 85.",2
+3559426.389,"Sent message to VM 3: old clock was 85, now 86.",2
+3559426.724,"Internal event: old clock was 86, now 87.",2
+3559427.059,"Internal event: old clock was 87, now 88.",2
+3559427.391,"Sent message to VM 1: old clock was 88, now 89.",2
+3559427.391,"Sent message to VM 3: old clock was 89, now 90.",2
+3559427.724,"Internal event: old clock was 90, now 91.",2
+3559428.058,"Sent message to VM 1: old clock was 91, now 92.",2
+3559428.058,"Sent message to VM 3: old clock was 92, now 93.",2
+3559428.387,"Sent message to VM 3: old clock was 93, now 94.",2
+3559428.724,"Sent message to VM 1: old clock was 94, now 95.",2
+3559428.725,"Sent message to VM 3: old clock was 95, now 96.",2
+3559429.058,"Internal event: old clock was 96, now 97.",2
+3559429.391,"Internal event: old clock was 97, now 98.",2
+3559429.720,"Internal event: old clock was 98, now 99.",2
+3559430.055,"Received message: old clock was 99, incoming was 96, now 100. Queue length: 0",2
+3559430.386,"Received message: old clock was 100, incoming was 98, now 101. Queue length: 0",2
+3559430.724,"Received message: old clock was 101, incoming was 98, now 102. Queue length: 0",2
+3559431.058,"Sent message to VM 3: old clock was 102, now 103.",2
+3559431.388,"Sent message to VM 1: old clock was 103, now 104.",2
+3559431.724,"Sent message to VM 1: old clock was 104, now 105.",2
+3559431.725,"Sent message to VM 3: old clock was 105, now 106.",2
+3559432.054,"Internal event: old clock was 106, now 107.",2
+3559432.389,"Internal event: old clock was 107, now 108.",2
+3559432.722,"Internal event: old clock was 108, now 109.",2
+3559433.058,"Received message: old clock was 109, incoming was 109, now 110. Queue length: 0",2
+3559433.389,"Internal event: old clock was 110, now 111.",2
+3559433.723,"Internal event: old clock was 111, now 112.",2
+3559434.055,"Received message: old clock was 112, incoming was 112, now 113. Queue length: 0",2
+3559434.391,"Sent message to VM 1: old clock was 113, now 114.",2
+3559434.722,"Internal event: old clock was 114, now 115.",2
+3559435.058,"Sent message to VM 1: old clock was 115, now 116.",2
+3559435.389,"Internal event: old clock was 116, now 117.",2
+3559435.723,"Sent message to VM 1: old clock was 117, now 118.",2
+3559435.723,"Sent message to VM 3: old clock was 118, now 119.",2
+3559436.053,"Internal event: old clock was 119, now 120.",2
+3559436.391,"Sent message to VM 1: old clock was 120, now 121.",2
+3559436.391,"Sent message to VM 3: old clock was 121, now 122.",2
+3559436.724,"Sent message to VM 1: old clock was 122, now 123.",2
+3559437.057,"Sent message to VM 1: old clock was 123, now 124.",2
+3559437.390,"Internal event: old clock was 124, now 125.",2
+3559437.724,"Internal event: old clock was 125, now 126.",2
+3559438.058,"Internal event: old clock was 126, now 127.",2
+3559438.386,"Internal event: old clock was 127, now 128.",2
+3559438.724,"Internal event: old clock was 128, now 129.",2
+3559439.055,"Internal event: old clock was 129, now 130.",2
+3559439.391,"Internal event: old clock was 130, now 131.",2
+3559439.723,"Received message: old clock was 131, incoming was 130, now 132. Queue length: 1",2
+3559440.057,"Received message: old clock was 132, incoming was 130, now 133. Queue length: 1",2
+3559440.389,"Received message: old clock was 133, incoming was 131, now 134. Queue length: 0",2
+3559440.719,"Internal event: old clock was 134, now 135.",2
+3559441.057,"Received message: old clock was 135, incoming was 135, now 136. Queue length: 0",2
+3559441.391,"Received message: old clock was 136, incoming was 137, now 138. Queue length: 0",2
+3559441.722,"Internal event: old clock was 138, now 139.",2
+3559442.058,"Internal event: old clock was 139, now 140.",2
+3559442.391,"Sent message to VM 1: old clock was 140, now 141.",2
+3559442.723,"Internal event: old clock was 141, now 142.",2
+3559443.055,"Internal event: old clock was 142, now 143.",2
+3559443.391,"Internal event: old clock was 143, now 144.",2
+3559443.724,"Received message: old clock was 144, incoming was 143, now 145. Queue length: 0",2
+3559444.058,"Received message: old clock was 145, incoming was 145, now 146. Queue length: 0",2
+3559444.388,"Internal event: old clock was 146, now 147.",2
+3559444.724,"Internal event: old clock was 147, now 148.",2
+3559445.056,"Received message: old clock was 148, incoming was 148, now 149. Queue length: 0",2
+3559445.391,"Sent message to VM 1: old clock was 149, now 150.",2
+3559445.723,"Sent message to VM 3: old clock was 150, now 151.",2
+3559446.056,"Received message: old clock was 151, incoming was 151, now 152. Queue length: 0",2
+3559446.390,"Received message: old clock was 152, incoming was 153, now 154. Queue length: 0",2
+3559446.723,"Internal event: old clock was 154, now 155.",2
+3559447.053,"Received message: old clock was 155, incoming was 155, now 156. Queue length: 0",2
+3559447.388,"Received message: old clock was 156, incoming was 155, now 157. Queue length: 0",2
+3559447.724,"Sent message to VM 3: old clock was 157, now 158.",2
+3559448.054,"Internal event: old clock was 158, now 159.",2
+3559448.391,"Internal event: old clock was 159, now 160.",2
+3559448.720,"Internal event: old clock was 160, now 161.",2
+3559449.058,"Internal event: old clock was 161, now 162.",2
+3559449.391,"Internal event: old clock was 162, now 163.",2
+3559449.721,"Internal event: old clock was 163, now 164.",2
+3559450.055,"Received message: old clock was 164, incoming was 164, now 165. Queue length: 0",2
+3559450.388,"Internal event: old clock was 165, now 166.",2
+3559450.724,"Received message: old clock was 166, incoming was 167, now 168. Queue length: 0",2
+3559451.055,"Internal event: old clock was 168, now 169.",2
+3559451.391,"Received message: old clock was 169, incoming was 170, now 171. Queue length: 0",2
+3559451.724,"Sent message to VM 1: old clock was 171, now 172.",2
+3559452.058,"Sent message to VM 3: old clock was 172, now 173.",2
+3559452.390,"Internal event: old clock was 173, now 174.",2
+3559452.721,"Internal event: old clock was 174, now 175.",2
+3559453.058,"Internal event: old clock was 175, now 176.",2
+3559453.391,"Internal event: old clock was 176, now 177.",2
+3559453.722,"Received message: old clock was 177, incoming was 176, now 178. Queue length: 0",2
+3559454.056,"Internal event: old clock was 178, now 179.",2
+3559454.391,"Received message: old clock was 179, incoming was 179, now 180. Queue length: 0",2
+3559454.723,"Internal event: old clock was 180, now 181.",2
+3559455.053,"Received message: old clock was 181, incoming was 181, now 182. Queue length: 0",2
+3559455.388,"Internal event: old clock was 182, now 183.",2
+3559455.724,"Sent message to VM 1: old clock was 183, now 184.",2
+3559455.724,"Sent message to VM 3: old clock was 184, now 185.",2
+3559456.058,"Internal event: old clock was 185, now 186.",2
+3559456.390,"Internal event: old clock was 186, now 187.",2
+3559456.724,"Internal event: old clock was 187, now 188.",2
+3559457.053,"Received message: old clock was 188, incoming was 186, now 189. Queue length: 0",2
+3559457.391,"Internal event: old clock was 189, now 190.",2
+3559457.719,"Sent message to VM 1: old clock was 190, now 191.",2
+3559458.058,"Internal event: old clock was 191, now 192.",2
+3559458.387,"Internal event: old clock was 192, now 193.",2
+3559458.721,"Internal event: old clock was 193, now 194.",2
+3559459.058,"Received message: old clock was 194, incoming was 193, now 195. Queue length: 0",2
+3559459.386,"Sent message to VM 3: old clock was 195, now 196.",2
+3559459.724,"Sent message to VM 1: old clock was 196, now 197.",2
+3559459.724,"Sent message to VM 3: old clock was 197, now 198.",2
+3559460.058,"Internal event: old clock was 198, now 199.",2
+3559460.390,"Internal event: old clock was 199, now 200.",2
+3559399.688,"PARAMETERS: tick_rate = 3.0, send_threshold = 10",1
+3559399.688,Network: Listening on 127.0.0.1:5001,1
+3559399.700,Network: Connected to peer VM 2 at 127.0.0.1:5002,1
+3559399.713,Network: Connected to peer VM 3 at 127.0.0.1:5003,1
+3559400.051,"Internal event: old clock was 0, now 1.",1
+3559400.379,"Internal event: old clock was 1, now 2.",1
+3559400.713,"Network: Accepted connection from ('127.0.0.1', 50386)",1
+3559400.713,"Network: Accepted connection from ('127.0.0.1', 50387)",1
+3559400.717,"Internal event: old clock was 2, now 3.",1
+3559401.051,"Sent message to VM 2: old clock was 3, now 4.",1
+3559401.051,"Sent message to VM 3: old clock was 4, now 5.",1
+3559401.384,"Internal event: old clock was 5, now 6.",1
+3559401.714,"Internal event: old clock was 6, now 7.",1
+3559402.050,"Internal event: old clock was 7, now 8.",1
+3559402.384,"Internal event: old clock was 8, now 9.",1
+3559402.716,"Internal event: old clock was 9, now 10.",1
+3559403.051,"Received message: old clock was 10, incoming was 9, now 11. Queue length: 0",1
+3559403.382,"Internal event: old clock was 11, now 12.",1
+3559403.718,"Internal event: old clock was 12, now 13.",1
+3559404.050,"Internal event: old clock was 13, now 14.",1
+3559404.383,"Internal event: old clock was 14, now 15.",1
+3559404.718,"Received message: old clock was 15, incoming was 15, now 16. Queue length: 1",1
+3559405.051,"Received message: old clock was 16, incoming was 14, now 17. Queue length: 0",1
+3559405.381,"Internal event: old clock was 17, now 18.",1
+3559405.714,"Internal event: old clock was 18, now 19.",1
+3559406.051,"Sent message to VM 3: old clock was 19, now 20.",1
+3559406.385,"Sent message to VM 3: old clock was 20, now 21.",1
+3559406.718,"Internal event: old clock was 21, now 22.",1
+3559407.050,"Internal event: old clock was 22, now 23.",1
+3559407.384,"Internal event: old clock was 23, now 24.",1
+3559407.714,"Internal event: old clock was 24, now 25.",1
+3559408.051,"Internal event: old clock was 25, now 26.",1
+3559408.384,"Received message: old clock was 26, incoming was 26, now 27. Queue length: 0",1
+3559408.718,"Received message: old clock was 27, incoming was 27, now 28. Queue length: 0",1
+3559409.051,"Sent message to VM 2: old clock was 28, now 29.",1
+3559409.052,"Sent message to VM 3: old clock was 29, now 30.",1
+3559409.385,"Sent message to VM 3: old clock was 30, now 31.",1
+3559409.715,"Sent message to VM 3: old clock was 31, now 32.",1
+3559410.051,"Sent message to VM 2: old clock was 32, now 33.",1
+3559410.382,"Internal event: old clock was 33, now 34.",1
+3559410.715,"Sent message to VM 3: old clock was 34, now 35.",1
+3559411.050,"Internal event: old clock was 35, now 36.",1
+3559411.380,"Internal event: old clock was 36, now 37.",1
+3559411.718,"Internal event: old clock was 37, now 38.",1
+3559412.046,"Internal event: old clock was 38, now 39.",1
+3559412.380,"Internal event: old clock was 39, now 40.",1
+3559412.718,"Received message: old clock was 40, incoming was 39, now 41. Queue length: 0",1
+3559413.050,"Internal event: old clock was 41, now 42.",1
+3559413.381,"Received message: old clock was 42, incoming was 42, now 43. Queue length: 0",1
+3559413.718,"Sent message to VM 2: old clock was 43, now 44.",1
+3559414.047,"Internal event: old clock was 44, now 45.",1
+3559414.381,"Received message: old clock was 45, incoming was 44, now 46. Queue length: 0",1
+3559414.717,"Internal event: old clock was 46, now 47.",1
+3559415.047,"Sent message to VM 2: old clock was 47, now 48.",1
+3559415.047,"Sent message to VM 3: old clock was 48, now 49.",1
+3559415.383,"Received message: old clock was 49, incoming was 48, now 50. Queue length: 0",1
+3559415.714,"Internal event: old clock was 50, now 51.",1
+3559416.049,"Internal event: old clock was 51, now 52.",1
+3559416.383,"Received message: old clock was 52, incoming was 52, now 53. Queue length: 0",1
+3559416.716,"Internal event: old clock was 53, now 54.",1
+3559417.048,"Internal event: old clock was 54, now 55.",1
+3559417.381,"Internal event: old clock was 55, now 56.",1
+3559417.713,"Sent message to VM 2: old clock was 56, now 57.",1
+3559417.713,"Sent message to VM 3: old clock was 57, now 58.",1
+3559418.051,"Sent message to VM 2: old clock was 58, now 59.",1
+3559418.382,"Sent message to VM 2: old clock was 59, now 60.",1
+3559418.718,"Sent message to VM 2: old clock was 60, now 61.",1
+3559419.049,"Internal event: old clock was 61, now 62.",1
+3559419.384,"Received message: old clock was 62, incoming was 61, now 63. Queue length: 0",1
+3559419.717,"Internal event: old clock was 63, now 64.",1
+3559420.048,"Internal event: old clock was 64, now 65.",1
+3559420.384,"Internal event: old clock was 65, now 66.",1
+3559420.714,"Internal event: old clock was 66, now 67.",1
+3559421.051,"Internal event: old clock was 67, now 68.",1
+3559421.381,"Internal event: old clock was 68, now 69.",1
+3559421.717,"Internal event: old clock was 69, now 70.",1
+3559422.051,"Sent message to VM 2: old clock was 70, now 71.",1
+3559422.051,"Sent message to VM 3: old clock was 71, now 72.",1
+3559422.384,"Internal event: old clock was 72, now 73.",1
+3559422.718,"Internal event: old clock was 73, now 74.",1
+3559423.050,"Internal event: old clock was 74, now 75.",1
+3559423.384,"Received message: old clock was 75, incoming was 74, now 76. Queue length: 1",1
+3559423.718,"Received message: old clock was 76, incoming was 74, now 77. Queue length: 0",1
+3559424.051,"Received message: old clock was 77, incoming was 76, now 78. Queue length: 0",1
+3559424.381,"Received message: old clock was 78, incoming was 78, now 79. Queue length: 0",1
+3559424.713,"Received message: old clock was 79, incoming was 79, now 80. Queue length: 0",1
+3559425.051,"Internal event: old clock was 80, now 81.",1
+3559425.383,"Sent message to VM 2: old clock was 81, now 82.",1
+3559425.383,"Sent message to VM 3: old clock was 82, now 83.",1
+3559425.715,"Sent message to VM 3: old clock was 83, now 84.",1
+3559426.050,"Internal event: old clock was 84, now 85.",1
+3559426.384,"Internal event: old clock was 85, now 86.",1
+3559426.718,"Internal event: old clock was 86, now 87.",1
+3559427.051,"Internal event: old clock was 87, now 88.",1
+3559427.385,"Sent message to VM 3: old clock was 88, now 89.",1
+3559427.716,"Received message: old clock was 89, incoming was 88, now 90. Queue length: 0",1
+3559428.046,"Internal event: old clock was 90, now 91.",1
+3559428.384,"Received message: old clock was 91, incoming was 91, now 92. Queue length: 0",1
+3559428.718,"Sent message to VM 3: old clock was 92, now 93.",1
+3559429.051,"Received message: old clock was 93, incoming was 94, now 95. Queue length: 0",1
+3559429.382,"Internal event: old clock was 95, now 96.",1
+3559429.718,"Sent message to VM 2: old clock was 96, now 97.",1
+3559430.051,"Internal event: old clock was 97, now 98.",1
+3559430.384,"Sent message to VM 2: old clock was 98, now 99.",1
+3559430.717,"Internal event: old clock was 99, now 100.",1
+3559431.051,"Internal event: old clock was 100, now 101.",1
+3559431.384,"Internal event: old clock was 101, now 102.",1
+3559431.713,"Received message: old clock was 102, incoming was 103, now 104. Queue length: 0",1
+3559432.047,"Received message: old clock was 104, incoming was 104, now 105. Queue length: 0",1
+3559432.384,"Internal event: old clock was 105, now 106.",1
+3559432.718,"Internal event: old clock was 106, now 107.",1
+3559433.050,"Received message: old clock was 107, incoming was 108, now 109. Queue length: 0",1
+3559433.381,"Received message: old clock was 109, incoming was 110, now 111. Queue length: 0",1
+3559433.716,"Internal event: old clock was 111, now 112.",1
+3559434.048,"Internal event: old clock was 112, now 113.",1
+3559434.383,"Received message: old clock was 113, incoming was 113, now 114. Queue length: 0",1
+3559434.715,"Received message: old clock was 114, incoming was 113, now 115. Queue length: 0",1
+3559435.046,"Internal event: old clock was 115, now 116.",1
+3559435.383,"Received message: old clock was 116, incoming was 115, now 117. Queue length: 0",1
+3559435.716,"Received message: old clock was 117, incoming was 117, now 118. Queue length: 0",1
+3559436.051,"Received message: old clock was 118, incoming was 117, now 119. Queue length: 0",1
+3559436.381,"Internal event: old clock was 119, now 120.",1
+3559436.718,"Received message: old clock was 120, incoming was 120, now 121. Queue length: 0",1
+3559437.051,"Received message: old clock was 121, incoming was 122, now 123. Queue length: 0",1
+3559437.383,"Received message: old clock was 123, incoming was 123, now 124. Queue length: 0",1
+3559437.714,"Sent message to VM 3: old clock was 124, now 125.",1
+3559438.049,"Internal event: old clock was 125, now 126.",1
+3559438.383,"Internal event: old clock was 126, now 127.",1
+3559438.717,"Internal event: old clock was 127, now 128.",1
+3559439.051,"Internal event: old clock was 128, now 129.",1
+3559439.381,"Internal event: old clock was 129, now 130.",1
+3559439.717,"Sent message to VM 2: old clock was 130, now 131.",1
+3559440.051,"Sent message to VM 2: old clock was 131, now 132.",1
+3559440.051,"Sent message to VM 3: old clock was 132, now 133.",1
+3559440.384,"Internal event: old clock was 133, now 134.",1
+3559440.718,"Internal event: old clock was 134, now 135.",1
+3559441.050,"Received message: old clock was 135, incoming was 134, now 136. Queue length: 0",1
+3559441.380,"Received message: old clock was 136, incoming was 136, now 137. Queue length: 0",1
+3559441.718,"Internal event: old clock was 137, now 138.",1
+3559442.046,"Internal event: old clock was 138, now 139.",1
+3559442.384,"Internal event: old clock was 139, now 140.",1
+3559442.718,"Received message: old clock was 140, incoming was 140, now 141. Queue length: 1",1
+3559443.051,"Received message: old clock was 141, incoming was 141, now 142. Queue length: 0",1
+3559443.384,"Internal event: old clock was 142, now 143.",1
+3559443.718,"Sent message to VM 2: old clock was 143, now 144.",1
+3559444.051,"Internal event: old clock was 144, now 145.",1
+3559444.384,"Internal event: old clock was 145, now 146.",1
+3559444.714,"Internal event: old clock was 146, now 147.",1
+3559445.047,"Internal event: old clock was 147, now 148.",1
+3559445.390,"Received message: old clock was 148, incoming was 149, now 150. Queue length: 0",1
+3559445.717,"Received message: old clock was 150, incoming was 149, now 151. Queue length: 0",1
+3559446.051,"Sent message to VM 2: old clock was 151, now 152.",1
+3559446.381,"Received message: old clock was 152, incoming was 152, now 153. Queue length: 0",1
+3559446.718,"Internal event: old clock was 153, now 154.",1
+3559447.051,"Internal event: old clock was 154, now 155.",1
+3559447.380,"Sent message to VM 2: old clock was 155, now 156.",1
+3559447.716,"Internal event: old clock was 156, now 157.",1
+3559448.051,"Internal event: old clock was 157, now 158.",1
+3559448.384,"Internal event: old clock was 158, now 159.",1
+3559448.718,"Received message: old clock was 159, incoming was 160, now 161. Queue length: 0",1
+3559449.051,"Internal event: old clock was 161, now 162.",1
+3559449.382,"Internal event: old clock was 162, now 163.",1
+3559449.718,"Internal event: old clock was 163, now 164.",1
+3559450.051,"Sent message to VM 3: old clock was 164, now 165.",1
+3559450.384,"Internal event: old clock was 165, now 166.",1
+3559450.714,"Received message: old clock was 166, incoming was 166, now 167. Queue length: 0",1
+3559451.049,"Internal event: old clock was 167, now 168.",1
+3559451.384,"Received message: old clock was 168, incoming was 169, now 170. Queue length: 0",1
+3559451.718,"Internal event: old clock was 170, now 171.",1
+3559452.047,"Received message: old clock was 171, incoming was 171, now 172. Queue length: 0",1
+3559452.382,"Internal event: old clock was 172, now 173.",1
+3559452.718,"Internal event: old clock was 173, now 174.",1
+3559453.050,"Sent message to VM 3: old clock was 174, now 175.",1
+3559453.383,"Internal event: old clock was 175, now 176.",1
+3559453.714,"Sent message to VM 2: old clock was 176, now 177.",1
+3559453.715,"Sent message to VM 3: old clock was 177, now 178.",1
+3559454.047,"Internal event: old clock was 178, now 179.",1
+3559454.384,"Internal event: old clock was 179, now 180.",1
+3559454.714,"Received message: old clock was 180, incoming was 180, now 181. Queue length: 0",1
+3559455.050,"Sent message to VM 2: old clock was 181, now 182.",1
+3559455.384,"Internal event: old clock was 182, now 183.",1
+3559455.716,"Internal event: old clock was 183, now 184.",1
+3559456.051,"Received message: old clock was 184, incoming was 183, now 185. Queue length: 1",1
+3559456.384,"Received message: old clock was 185, incoming was 184, now 186. Queue length: 0",1
+3559456.717,"Sent message to VM 2: old clock was 186, now 187.",1
+3559456.718,"Sent message to VM 3: old clock was 187, now 188.",1
+3559457.051,"Internal event: old clock was 188, now 189.",1
+3559457.384,"Internal event: old clock was 189, now 190.",1
+3559457.718,"Internal event: old clock was 190, now 191.",1
+3559458.047,"Received message: old clock was 191, incoming was 190, now 192. Queue length: 0",1
+3559458.383,"Sent message to VM 3: old clock was 192, now 193.",1
+3559458.714,"Internal event: old clock was 193, now 194.",1
+3559459.051,"Internal event: old clock was 194, now 195.",1
+3559459.380,"Internal event: old clock was 195, now 196.",1
