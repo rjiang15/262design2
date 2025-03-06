@@ -3,28 +3,36 @@ import unittest
 import os
 import sys
 
-def run_tests():
-    """
-    Discover and run all tests in the tests directory.
-    """
-    # Determine the test directory
-    test_dir = os.path.dirname(os.path.abspath(__file__))
-    
-    # Add the project root directory to the path so imports work
-    project_root = os.path.abspath(os.path.join(test_dir, ".."))
-    if project_root not in sys.path:
-        sys.path.insert(0, project_root)
-    
-    # Create test suite from all test files
-    loader = unittest.TestLoader()
-    suite = loader.discover(test_dir, pattern="test_*.py")
-    
-    # Run the tests
-    runner = unittest.TextTestRunner(verbosity=2)
-    result = runner.run(suite)
-    
-    # Return 0 if all tests passed, 1 otherwise
-    return 0 if result.wasSuccessful() else 1
+# ANSI escape codes for colored output
+GREEN = "\033[92m"
+RED = "\033[91m"
+RESET = "\033[0m"
+
+class ColorTextTestResult(unittest.TextTestResult):
+    def addSuccess(self, test):
+        super().addSuccess(test)
+        self.stream.writeln(f"{GREEN}SUCCESS: {test}{RESET}")
+
+    def addFailure(self, test, err):
+        super().addFailure(test, err)
+        self.stream.writeln(f"{RED}FAILURE: {test}{RESET}")
+
+    def addError(self, test, err):
+        super().addError(test, err)
+        self.stream.writeln(f"{RED}ERROR: {test}{RESET}")
+
+class ColorTextTestRunner(unittest.TextTestRunner):
+    resultclass = ColorTextTestResult
 
 if __name__ == "__main__":
-    sys.exit(run_tests())
+    # Discover all test files in the current testing directory
+    test_loader = unittest.TestLoader()
+    # Assumes run_tests.py is located in the testing directory
+    test_suite = test_loader.discover(start_dir=os.path.dirname(__file__), pattern="test_*.py")
+    
+    # Run tests with the custom colored test runner
+    runner = ColorTextTestRunner(verbosity=2)
+    result = runner.run(test_suite)
+    
+    # Return an appropriate exit code based on the test results
+    sys.exit(not result.wasSuccessful())

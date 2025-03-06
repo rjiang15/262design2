@@ -112,5 +112,24 @@ class TestNetwork(unittest.TestCase):
         # Check that the function returned None
         self.assertIsNone(result)
 
+# Custom test runner with colored output (green for success, red for failure/error)
 if __name__ == "__main__":
-    unittest.main()
+    GREEN = "\033[92m"
+    RED = "\033[91m"
+    RESET = "\033[0m"
+    
+    class ColorTextTestResult(unittest.TextTestResult):
+        def addSuccess(self, test):
+            super().addSuccess(test)
+            self.stream.writeln(f"{GREEN}SUCCESS: {test}{RESET}")
+        def addFailure(self, test, err):
+            super().addFailure(test, err)
+            self.stream.writeln(f"{RED}FAILURE: {test}{RESET}")
+        def addError(self, test, err):
+            super().addError(test, err)
+            self.stream.writeln(f"{RED}ERROR: {test}{RESET}")
+    
+    class ColorTextTestRunner(unittest.TextTestRunner):
+        resultclass = ColorTextTestResult
+    
+    unittest.main(testRunner=ColorTextTestRunner(verbosity=2))

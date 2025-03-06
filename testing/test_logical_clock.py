@@ -54,10 +54,29 @@ class TestLogicalClock(unittest.TestCase):
     def test_get_time(self):
         """Test that get_time returns the current time without modifying it."""
         clock = LogicalClock(initial=42)
-        time = clock.get_time()
-        self.assertEqual(time, 42)
+        current_time = clock.get_time()
+        self.assertEqual(current_time, 42)
         # Verify the internal time didn't change
         self.assertEqual(clock.time, 42)
 
+# Custom test runner with colored output (green for success, red for failure/error)
 if __name__ == "__main__":
-    unittest.main()
+    GREEN = "\033[92m"
+    RED = "\033[91m"
+    RESET = "\033[0m"
+    
+    class ColorTextTestResult(unittest.TextTestResult):
+        def addSuccess(self, test):
+            super().addSuccess(test)
+            self.stream.writeln(f"{GREEN}SUCCESS: {test}{RESET}")
+        def addFailure(self, test, err):
+            super().addFailure(test, err)
+            self.stream.writeln(f"{RED}FAILURE: {test}{RESET}")
+        def addError(self, test, err):
+            super().addError(test, err)
+            self.stream.writeln(f"{RED}ERROR: {test}{RESET}")
+    
+    class ColorTextTestRunner(unittest.TextTestRunner):
+        resultclass = ColorTextTestResult
+    
+    unittest.main(testRunner=ColorTextTestRunner(verbosity=2))

@@ -5,7 +5,7 @@ import os
 import csv
 import tempfile
 import glob
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 
 # Add the src directory to the path so we can import the modules
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
@@ -115,6 +115,50 @@ class TestArchiveLogs(unittest.TestCase):
         # Verify no archive file was created
         archive_files = glob.glob(os.path.join(self.archive_dir, "*.csv"))
         self.assertEqual(len(archive_files), 0)
+    
+    def test_parse_log_file(self):
+        """Test parsing a log file with a hard-coded example."""
+        # Here we assume that archive_logs.py now has a helper function named parse_log_file.
+        test_log_content = (
+            "1.000 - Internal event: old clock was 0, now 1.\n"
+            "2.000 - Sent message to VM 2: old clock was 1, now 2.\n"
+        )
+        # Create a temporary log file with the hard-coded content.
+        temp_log_path = os.path.join(self.log_dir, "vm_99.log")
+        with open(temp_log_path, "w") as f:
+            f.write(test_log_content)
+        
+        # Use the helper function to parse the file.
+        rows = archive_logs.parse_log_file(temp_log_path)
+        
+        # Define the expected output.
+        expected = [
+            ["1.000", "Internal event: old clock was 0, now 1.", "99"],
+            ["2.000", "Sent message to VM 2: old clock was 1, now 2.", "99"]
+        ]
+        self.assertEqual(rows, expected)
 
+# Custom test runner for colored output when this file is run directly.
 if __name__ == "__main__":
-    unittest.main()
+    # ANSI escape codes for colors.
+    GREEN = "\033[92m"
+    RED = "\033[91m"
+    RESET = "\033[0m"
+
+    class ColorTextTestResult(unittest.TextTestResult):
+        def addSuccess(self, test):
+            super().addSuccess(test)
+            self.stream.writeln(f"{GREEN}SUCCESS: {test}{RESET}")
+
+        def addFailure(self, test, err):
+            super().addFailure(test, err)
+            self.stream.writeln(f"{RED}FAILURE: {test}{RESET}")
+
+        def addError(self, test, err):
+            super().addError(test, err)
+            self.stream.writeln(f"{RED}ERROR: {test}{RESET}")
+
+    class ColorTextTestRunner(unittest.TextTestRunner):
+        resultclass = ColorTextTestResult
+
+    unittest.main(testRunner=ColorTextTestRunner(verbosity=2))

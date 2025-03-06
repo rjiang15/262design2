@@ -24,7 +24,7 @@ class TestIntegration(unittest.TestCase):
         self.log_dir = os.path.join(self.temp_dir.name, "logs")
         self.archive_dir = os.path.join(self.temp_dir.name, "archives")
         
-        # Create the log directory
+        # Create the log and archive directories
         os.makedirs(self.log_dir, exist_ok=True)
         os.makedirs(self.archive_dir, exist_ok=True)
         
@@ -34,7 +34,6 @@ class TestIntegration(unittest.TestCase):
         
         # Patch os.path.join to redirect log files to our temp directory
         self.original_join = os.path.join
-        
         def patched_join(*args):
             if len(args) >= 2:
                 if args[-2:] == ('..', 'logs'):
@@ -42,7 +41,6 @@ class TestIntegration(unittest.TestCase):
                 elif args[-2:] == ('..', 'archives'):
                     return self.archive_dir
             return self.original_join(*args)
-        
         os.path.join = patched_join
     
     def tearDown(self):
@@ -147,71 +145,77 @@ class TestIntegration(unittest.TestCase):
         log_files = glob.glob(os.path.join(self.log_dir, "*.log"))
         self.assertEqual(len(log_files), 0)
     
-    @unittest.skip("This test spawns actual processes and is time-consuming")
-    def test_run_vm_process(self):
-        """Test running a VM in a separate process."""
-        # Find the path to run_vm.py
-        run_vm_path = os.path.join(os.path.dirname(__file__), "..", "run_vm.py")
+    def test_deterministic_scenarios(self):
+        """Test deterministic behavior by parameterizing scenarios and removing randomness."""
+        scenarios = [
+            {
+                "desc": "Force internal event (no message sending)",
+                "send_threshold": 4,  # Allows random.randint(1,4) to produce 4
+                "rand_value": 4,      # This forces the else clause (internal_event)
+                "initial_clock_vm1": 10,
+                "initial_clock_vm2": 20,
+                "expected_vm1": 11,   # internal_event calls clock.tick() => +1
+                "action": "internal"
+            },
+            {
+                "desc": "Force message event (send to first peer)",
+                "send_threshold": 3,  # random.randint(1,3) returns 1
+                "rand_value": 1,      # This forces sending a message
+                "initial_clock_vm1": 10,
+                "initial_clock_vm2": 20,
+                "expected_vm1": 11,   # After sending, vm1's clock ticks
+                "expected_vm2": max(20, 10) + 1,  # When vm2 processes message: max(20, 10) + 1 = 21
+                "action": "send"
+            }
+        ]
         
-        # Run a VM process for a short duration
-        process = subprocess.Popen([
-            sys.executable,
-            run_vm_path,
-            "--vm_id", "1",
-            "--tick_rate", "10",
-            "--base_port", "5000",
-            "--duration", "2",  # Run for 2 seconds
-            "--send_threshold", "3",
-            "--total_vms", "1"
-        ])
-        
-        # Wait for the process to complete
-        process.wait()
-        
-        # Verify log file was created
-        log_files = glob.glob(os.path.join(self.log_dir, "*.log"))
-        self.assertEqual(len(log_files), 1)
-        
-        # Verify log file contains events
-        with open(log_files[0], "r") as f:
-            log_content = f.read()
-        self.assertIn("Internal event", log_content)
+        for scenario in scenarios:
+            with self.subTest(scenario=scenario["desc"]):
+                # Create two VMs with controlled send_threshold
+                vm1 = VirtualMachine(vm_id=1, tick_rate=10, send_threshold=scenario["send_threshold"])
+                vm2 = VirtualMachine(vm_id=2, tick_rate=10, send_threshold=scenario["send_threshold"])
+                # Set initial clock values
+                vm1.clock.time = scenario["initial_clock_vm1"]
+                vm2.clock.time = scenario["initial_clock_vm2"]
+                # Set up peers
+                vm1.peers = [vm2]
+                vm2.peers = [vm1]
+                # Patch random.randint to force a specific event outcome
+                with patch('random.randint', return_value=scenario["rand_value"]):
+                    vm1.run_tick()
+                
+                if scenario["action"] == "send":
+                    # For a send event, vm1 sends a message so vm2 should have a queued message
+                    self.assertEqual(len(vm2.msg_queue), 1)
+                    # Process the message in vm2 and verify its clock update
+                    vm2.process_message(vm2.msg_queue[0])
+                    self.assertEqual(vm2.clock.get_time(), scenario["expected_vm2"])
+                else:
+                    # For an internal event, simply check that vm1's clock incremented by one.
+                    self.assertEqual(vm1.clock.get_time(), scenario["expected_vm1"])
+                
+                vm1.shutdown()
+                vm2.shutdown()
     
-    @unittest.skip("This test spawns multiple processes and is time-consuming")
-    def test_multiple_vms(self):
-        """Test running multiple VMs that communicate with each other."""
-        # Find the path to main.py
-        main_path = os.path.join(os.path.dirname(__file__), "..", "main.py")
-        
-        # Run the simulation for a short duration
-        process = subprocess.Popen([
-            sys.executable,
-            main_path,
-            "--num_vms", "3",
-            "--duration", "5",  # Run for 5 seconds
-            "--tick_rates", "5,10,15",
-            "--send_threshold", "3"
-        ])
-        
-        # Wait for the process to complete
-        process.wait()
-        
-        # Verify log files were created
-        log_files = glob.glob(os.path.join(self.log_dir, "*.log"))
-        self.assertEqual(len(log_files), 0)  # Logs should be cleared and archived
-        
-        # Verify archive file was created
-        archive_files = glob.glob(os.path.join(self.archive_dir, "*.csv"))
-        self.assertEqual(len(archive_files), 1)
-        
-        # Verify CSV contains events from all VMs
-        with open(archive_files[0], "r", newline="") as csvfile:
-            reader = csv.reader(csvfile)
-            rows = list(reader)
-        
-        # Extract VM IDs
-        vm_ids = set(row[2] for row in rows[1:])
-        self.assertEqual(vm_ids, {"1", "2", "3"})
 
+# Custom test runner with colored output (green for success, red for failure/error)
 if __name__ == "__main__":
-    unittest.main()
+    GREEN = "\033[92m"
+    RED = "\033[91m"
+    RESET = "\033[0m"
+    
+    class ColorTextTestResult(unittest.TextTestResult):
+        def addSuccess(self, test):
+            super().addSuccess(test)
+            self.stream.writeln(f"{GREEN}SUCCESS: {test}{RESET}")
+        def addFailure(self, test, err):
+            super().addFailure(test, err)
+            self.stream.writeln(f"{RED}FAILURE: {test}{RESET}")
+        def addError(self, test, err):
+            super().addError(test, err)
+            self.stream.writeln(f"{RED}ERROR: {test}{RESET}")
+    
+    class ColorTextTestRunner(unittest.TextTestRunner):
+        resultclass = ColorTextTestResult
+    
+    unittest.main(testRunner=ColorTextTestRunner(verbosity=2))
